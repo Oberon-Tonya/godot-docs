@@ -20,13 +20,23 @@ Base class for window dialogs.
 Member Functions
 ----------------
 
-+--------------------------------------------+------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_title<class_WindowDialog_set_title>`  **(** :ref:`String<class_string>` title  **)** |
-+--------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                | :ref:`get_title<class_WindowDialog_get_title>`  **(** **)** const                              |
-+--------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`TextureButton<class_texturebutton>`  | :ref:`get_close_button<class_WindowDialog_get_close_button>`  **(** **)**                      |
-+--------------------------------------------+------------------------------------------------------------------------------------------------+
++--------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`TextureButton<class_texturebutton>`  | :ref:`get_close_button<class_WindowDialog_get_close_button>`  **(** **)**                              |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`get_resizable<class_WindowDialog_get_resizable>`  **(** **)** const                              |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                | :ref:`get_title<class_WindowDialog_get_title>`  **(** **)** const                                      |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`set_resizable<class_WindowDialog_set_resizable>`  **(** :ref:`bool<class_bool>` resizable  **)** |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`set_title<class_WindowDialog_set_title>`  **(** :ref:`String<class_string>` title  **)**         |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **resizable**
+- :ref:`String<class_string>` **window_title**
 
 Description
 -----------
@@ -36,11 +46,15 @@ Windowdialog is the base class for all window-based dialogs. It's a by-default t
 Member Function Description
 ---------------------------
 
-.. _class_WindowDialog_set_title:
+.. _class_WindowDialog_get_close_button:
 
-- void  **set_title**  **(** :ref:`String<class_string>` title  **)**
+- :ref:`TextureButton<class_texturebutton>`  **get_close_button**  **(** **)**
 
-Set the title of the window.
+Return the close :ref:`TextureButton<class_texturebutton>`.
+
+.. _class_WindowDialog_get_resizable:
+
+- :ref:`bool<class_bool>`  **get_resizable**  **(** **)** const
 
 .. _class_WindowDialog_get_title:
 
@@ -48,10 +62,14 @@ Set the title of the window.
 
 Return the title of the window.
 
-.. _class_WindowDialog_get_close_button:
+.. _class_WindowDialog_set_resizable:
 
-- :ref:`TextureButton<class_texturebutton>`  **get_close_button**  **(** **)**
+- void  **set_resizable**  **(** :ref:`bool<class_bool>` resizable  **)**
 
-Return the close :ref:`TextureButton<class_texturebutton>`.
+.. _class_WindowDialog_set_title:
+
+- void  **set_title**  **(** :ref:`String<class_string>` title  **)**
+
+Set the title of the window.
 
 

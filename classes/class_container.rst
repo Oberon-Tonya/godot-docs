@@ -8,7 +8,7 @@ Container
 
 **Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`PanelContainer<class_panelcontainer>`, :ref:`GridContainer<class_gridcontainer>`, :ref:`ScrollContainer<class_scrollcontainer>`, :ref:`MarginContainer<class_margincontainer>`, :ref:`CenterContainer<class_centercontainer>`, :ref:`GraphNode<class_graphnode>`, :ref:`SplitContainer<class_splitcontainer>`, :ref:`BoxContainer<class_boxcontainer>`
+**Inherited By:** :ref:`PanelContainer<class_panelcontainer>`, :ref:`GridContainer<class_gridcontainer>`, :ref:`ScrollContainer<class_scrollcontainer>`, :ref:`ViewportContainer<class_viewportcontainer>`, :ref:`CenterContainer<class_centercontainer>`, :ref:`MarginContainer<class_margincontainer>`, :ref:`GraphNode<class_graphnode>`, :ref:`SplitContainer<class_splitcontainer>`, :ref:`BoxContainer<class_boxcontainer>`
 
 **Category:** Core
 
@@ -21,15 +21,17 @@ Member Functions
 ----------------
 
 +-------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`queue_sort<class_Container_queue_sort>`  **(** **)**                                                                                    |
-+-------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | void  | :ref:`fit_child_in_rect<class_Container_fit_child_in_rect>`  **(** :ref:`Control<class_control>` child, :ref:`Rect2<class_rect2>` rect  **)** |
++-------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`queue_sort<class_Container_queue_sort>`  **(** **)**                                                                                    |
 +-------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
 -  **sort_children**  **(** **)**
+Emitted when sorting the children is needed.
+
 
 Numeric Constants
 -----------------
@@ -46,16 +48,16 @@ A Control can inherit this to create custom container classes.
 Member Function Description
 ---------------------------
 
-.. _class_Container_queue_sort:
-
-- void  **queue_sort**  **(** **)**
-
-Queue resort of the contained children. This is called automatically anyway, but can be called upon request.
-
 .. _class_Container_fit_child_in_rect:
 
 - void  **fit_child_in_rect**  **(** :ref:`Control<class_control>` child, :ref:`Rect2<class_rect2>` rect  **)**
 
 Fit a child control in a given rect. This is mainly a helper for creating custom container classes.
+
+.. _class_Container_queue_sort:
+
+- void  **queue_sort**  **(** **)**
+
+Queue resort of the contained children. This is called automatically anyway, but can be called upon request.
 
 

@@ -19,14 +19,28 @@ Member Functions
 ----------------
 
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_param<class_HingeJoint_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
+| :ref:`bool<class_bool>`    | :ref:`get_flag<class_HingeJoint_get_flag>`  **(** :ref:`int<class_int>` flag  **)** const                               |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_param<class_HingeJoint_get_param>`  **(** :ref:`int<class_int>` param  **)** const                            |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_flag<class_HingeJoint_set_flag>`  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` enabled  **)**    |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`get_flag<class_HingeJoint_get_flag>`  **(** :ref:`int<class_int>` flag  **)** const                               |
+| void                       | :ref:`set_param<class_HingeJoint_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **angular_limit/bias**
+- :ref:`bool<class_bool>` **angular_limit/enable**
+- :ref:`float<class_float>` **angular_limit/lower**
+- :ref:`float<class_float>` **angular_limit/relaxation**
+- :ref:`float<class_float>` **angular_limit/softness**
+- :ref:`float<class_float>` **angular_limit/upper**
+- :ref:`bool<class_bool>` **motor/enable**
+- :ref:`float<class_float>` **motor/max_impulse**
+- :ref:`float<class_float>` **motor/target_velocity**
+- :ref:`float<class_float>` **params/bias**
 
 Numeric Constants
 -----------------
@@ -47,9 +61,9 @@ Numeric Constants
 Member Function Description
 ---------------------------
 
-.. _class_HingeJoint_set_param:
+.. _class_HingeJoint_get_flag:
 
-- void  **set_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
+- :ref:`bool<class_bool>`  **get_flag**  **(** :ref:`int<class_int>` flag  **)** const
 
 .. _class_HingeJoint_get_param:
 
@@ -59,8 +73,8 @@ Member Function Description
 
 - void  **set_flag**  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` enabled  **)**
 
-.. _class_HingeJoint_get_flag:
+.. _class_HingeJoint_set_param:
 
-- :ref:`bool<class_bool>`  **get_flag**  **(** :ref:`int<class_int>` flag  **)** const
+- void  **set_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
 
 

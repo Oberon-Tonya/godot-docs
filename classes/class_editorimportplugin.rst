@@ -18,28 +18,62 @@ Brief Description
 Member Functions
 ----------------
 
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RawArray<class_rawarray>`  | :ref:`custom_export<class_EditorImportPlugin_custom_export>`  **(** :ref:`String<class_string>` path  **)** virtual                |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_name<class_EditorImportPlugin_get_name>`  **(** **)** virtual                                                            |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_visible_name<class_EditorImportPlugin_get_visible_name>`  **(** **)** virtual                                            |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`import<class_EditorImportPlugin_import>`  **(** :ref:`String<class_string>` path, ResourceImportMetaData from  **)** virtual |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`import_dialog<class_EditorImportPlugin_import_dialog>`  **(** :ref:`String<class_string>` from  **)** virtual                |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`    | :ref:`get_import_options<class_EditorImportPlugin_get_import_options>`  **(** :ref:`int<class_int>` preset  **)** virtual                                                                                                                                                              |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_importer_name<class_EditorImportPlugin_get_importer_name>`  **(** **)** virtual                                                                                                                                                                                              |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`get_option_visibility<class_EditorImportPlugin_get_option_visibility>`  **(** :ref:`String<class_string>` option, :ref:`Dictionary<class_dictionary>` options  **)** virtual                                                                                                     |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_preset_count<class_EditorImportPlugin_get_preset_count>`  **(** **)** virtual                                                                                                                                                                                                |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_preset_name<class_EditorImportPlugin_get_preset_name>`  **(** :ref:`int<class_int>` preset  **)** virtual                                                                                                                                                                    |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`    | :ref:`get_recognized_extensions<class_EditorImportPlugin_get_recognized_extensions>`  **(** **)** virtual                                                                                                                                                                              |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_resource_type<class_EditorImportPlugin_get_resource_type>`  **(** **)** virtual                                                                                                                                                                                              |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_save_extension<class_EditorImportPlugin_get_save_extension>`  **(** **)** virtual                                                                                                                                                                                            |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_visible_name<class_EditorImportPlugin_get_visible_name>`  **(** **)** virtual                                                                                                                                                                                                |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`import<class_EditorImportPlugin_import>`  **(** :ref:`String<class_string>` source_file, :ref:`String<class_string>` save_path, :ref:`Dictionary<class_dictionary>` options, :ref:`Array<class_array>` r_platform_variants, :ref:`Array<class_array>` r_gen_files  **)** virtual |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
-.. _class_EditorImportPlugin_custom_export:
+.. _class_EditorImportPlugin_get_import_options:
 
-- :ref:`RawArray<class_rawarray>`  **custom_export**  **(** :ref:`String<class_string>` path  **)** virtual
+- :ref:`Array<class_array>`  **get_import_options**  **(** :ref:`int<class_int>` preset  **)** virtual
 
-.. _class_EditorImportPlugin_get_name:
+.. _class_EditorImportPlugin_get_importer_name:
 
-- :ref:`String<class_string>`  **get_name**  **(** **)** virtual
+- :ref:`String<class_string>`  **get_importer_name**  **(** **)** virtual
+
+.. _class_EditorImportPlugin_get_option_visibility:
+
+- :ref:`bool<class_bool>`  **get_option_visibility**  **(** :ref:`String<class_string>` option, :ref:`Dictionary<class_dictionary>` options  **)** virtual
+
+.. _class_EditorImportPlugin_get_preset_count:
+
+- :ref:`int<class_int>`  **get_preset_count**  **(** **)** virtual
+
+.. _class_EditorImportPlugin_get_preset_name:
+
+- :ref:`String<class_string>`  **get_preset_name**  **(** :ref:`int<class_int>` preset  **)** virtual
+
+.. _class_EditorImportPlugin_get_recognized_extensions:
+
+- :ref:`Array<class_array>`  **get_recognized_extensions**  **(** **)** virtual
+
+.. _class_EditorImportPlugin_get_resource_type:
+
+- :ref:`String<class_string>`  **get_resource_type**  **(** **)** virtual
+
+.. _class_EditorImportPlugin_get_save_extension:
+
+- :ref:`String<class_string>`  **get_save_extension**  **(** **)** virtual
 
 .. _class_EditorImportPlugin_get_visible_name:
 
@@ -47,10 +81,6 @@ Member Function Description
 
 .. _class_EditorImportPlugin_import:
 
-- :ref:`int<class_int>`  **import**  **(** :ref:`String<class_string>` path, ResourceImportMetaData from  **)** virtual
-
-.. _class_EditorImportPlugin_import_dialog:
-
-- void  **import_dialog**  **(** :ref:`String<class_string>` from  **)** virtual
+- :ref:`int<class_int>`  **import**  **(** :ref:`String<class_string>` source_file, :ref:`String<class_string>` save_path, :ref:`Dictionary<class_dictionary>` options, :ref:`Array<class_array>` r_platform_variants, :ref:`Array<class_array>` r_gen_files  **)** virtual
 
 

@@ -6,7 +6,7 @@
 RegEx
 =====
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
 
@@ -18,83 +18,112 @@ Simple regular expression matcher.
 Member Functions
 ----------------
 
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`compile<class_RegEx_compile>`  **(** :ref:`String<class_string>` pattern, :ref:`int<class_int>` capture=9  **)**                          |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`find<class_RegEx_find>`  **(** :ref:`String<class_string>` text, :ref:`int<class_int>` start=0, :ref:`int<class_int>` end=-1  **)** const |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`clear<class_RegEx_clear>`  **(** **)**                                                                                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`is_valid<class_RegEx_is_valid>`  **(** **)** const                                                                                        |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_capture_count<class_RegEx_get_capture_count>`  **(** **)** const                                                                      |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`get_capture<class_RegEx_get_capture>`  **(** :ref:`int<class_int>` capture  **)** const                                                   |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_capture_start<class_RegEx_get_capture_start>`  **(** :ref:`int<class_int>` capture  **)** const                                       |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`  | :ref:`get_captures<class_RegEx_get_captures>`  **(** **)** const                                                                                |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`clear<class_RegEx_clear>`  **(** **)**                                                                                                                                                                              |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`compile<class_RegEx_compile>`  **(** :ref:`String<class_string>` pattern  **)**                                                                                                                                     |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_group_count<class_RegEx_get_group_count>`  **(** **)** const                                                                                                                                                    |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`    | :ref:`get_names<class_RegEx_get_names>`  **(** **)** const                                                                                                                                                                |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_pattern<class_RegEx_get_pattern>`  **(** **)** const                                                                                                                                                            |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_valid<class_RegEx_is_valid>`  **(** **)** const                                                                                                                                                                  |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`  | :ref:`search<class_RegEx_search>`  **(** :ref:`String<class_string>` text, :ref:`int<class_int>` start=0, :ref:`int<class_int>` end=-1  **)** const                                                                       |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`sub<class_RegEx_sub>`  **(** :ref:`String<class_string>` text, :ref:`String<class_string>` replacement, :ref:`bool<class_bool>` all=false, :ref:`int<class_int>` start=0, :ref:`int<class_int>` end=-1  **)** const |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **pattern**
 
 Description
 -----------
 
-Class for finding text patterns in a string using regular expressions. Regular expressions are a way to define patterns of text to be searched.
+Class for finding text patterns in a string using regular expressions. It can not perform replacements. Regular expressions are a way to define patterns of text to be searched. Details on writing patterns are too long to explain here but the Internet is full of tutorials and detailed explanations.
 
-This class only finds patterns in a string. It can not perform replacements.
+Once created, the RegEx object needs to be compiled with the pattern before it can be used. The pattern must be escaped first for gdscript before it is escaped for the expression. For example:
 
-Usage of regular expressions is too long to be explained here, but Internet is full of tutorials and detailed explanations.
+``var exp = RegEx.new()``
+
+``exp.compile("\\d+")``
+
+would be read by RegEx as ``\d+``
+
+Similarly:
+
+``exp.compile("\"(?:\\\\.|:ref:`^\"<class_^\">`)\*\"")``
+
+would be read as ``"(?:\\.|:ref:`^"<class_^">`)\*"``
 
 Currently supported features:
 
-Capturing ``()`` and non-capturing ``(?:)`` groups
+\* Capturing ``()`` and non-capturing ``(?:)`` groups
 
-Any character ``.``
+\* Named capturing groups ``(?P<name>)``
 
-Shorthand character classes ``\w \W \s \S \d \D``
+\* Any character ``.``
 
-User-defined character classes such as ``:ref:`A-Za-z<class_a-za-z>```
+\* Shorthand character classes ``\w \W \s \S \d \D``
 
-Simple quantifiers ``?``, ``\*`` and ``+``
+\* User-defined character classes such as ``:ref:`A-Za-z<class_a-za-z>```
 
-Range quantifiers ``{x,y}``
+\* Simple quantifiers ``?``, ``\*`` and ``+``
 
-Lazy (non-greedy) quantifiers ``\*?``
+\* Range quantifiers ``{x,y}``
 
-Beginning ``^`` and end ``$`` anchors
+\* Lazy (non-greedy) quantifiers ``\*?``
 
-Alternation ``|``
+\* Beginning ``^`` and end ``$`` anchors
 
-Backreferences ``\1`` and ``\g{1}``
+\* Alternation ``|``
 
-POSIX character classes ``:ref:`[:alnum:<class_[:alnum:>`]``
+\* Backreferences ``\1``, ``\g{1}``, and ``\g<name>``
 
-Lookahead ``(?=)``, ``(?!)`` and lookbehind ``(?<=)``, ``(?<!)``
+\* POSIX character classes ``:ref:`[:alnum:<class_[:alnum:>`]``
 
-ASCII ``\xFF`` and Unicode ``\uFFFF`` code points (in a style similar to Python)
+\* Lookahead ``(?=)``, ``(?!)`` and lookbehind ``(?<=)``, ``(?<!)``
 
-Word boundaries ``\b``, ``\B``
+\* ASCII ``\xFF`` and Unicode ``\uFFFF`` code points (in a style similar to Python)
+
+\* Word boundaries ``\b``, ``\B``
 
 Member Function Description
 ---------------------------
-
-.. _class_RegEx_compile:
-
-- :ref:`int<class_int>`  **compile**  **(** :ref:`String<class_string>` pattern, :ref:`int<class_int>` capture=9  **)**
-
-Compiles and assign the regular expression pattern to use. The limit on the number of capturing groups can be specified or made unlimited if negative.
-
-.. _class_RegEx_find:
-
-- :ref:`int<class_int>`  **find**  **(** :ref:`String<class_string>` text, :ref:`int<class_int>` start=0, :ref:`int<class_int>` end=-1  **)** const
-
-This method tries to find the pattern within the string, and returns the position where it was found. It also stores any capturing group (see :ref:`get_capture<class_RegEx_get_capture>`) for further retrieval.
 
 .. _class_RegEx_clear:
 
 - void  **clear**  **(** **)**
 
-This method resets the state of the object, as it was freshly created. Namely, it unassigns the regular expression of this object, and forgets all captures made by the last :ref:`find<class_RegEx_find>`.
+This method resets the state of the object, as it was freshly created. Namely, it unassigns the regular expression of this object.
+
+.. _class_RegEx_compile:
+
+- :ref:`int<class_int>`  **compile**  **(** :ref:`String<class_string>` pattern  **)**
+
+Compiles and assign the regular expression pattern to use.
+
+.. _class_RegEx_get_group_count:
+
+- :ref:`int<class_int>`  **get_group_count**  **(** **)** const
+
+Returns the number of numeric capturing groups.
+
+.. _class_RegEx_get_names:
+
+- :ref:`Array<class_array>`  **get_names**  **(** **)** const
+
+Returns an array of names of named capturing groups.
+
+.. _class_RegEx_get_pattern:
+
+- :ref:`String<class_string>`  **get_pattern**  **(** **)** const
+
+Returns the expression used to compile the code.
 
 .. _class_RegEx_is_valid:
 
@@ -102,26 +131,16 @@ This method resets the state of the object, as it was freshly created. Namely, i
 
 Returns whether this object has a valid regular expression assigned.
 
-.. _class_RegEx_get_capture_count:
+.. _class_RegEx_search:
 
-- :ref:`int<class_int>`  **get_capture_count**  **(** **)** const
+- :ref:`Object<class_object>`  **search**  **(** :ref:`String<class_string>` text, :ref:`int<class_int>` start=0, :ref:`int<class_int>` end=-1  **)** const
 
-Returns the number of capturing groups. A captured group is the part of a string that matches a part of the pattern delimited by parentheses (unless they are non-capturing parentheses *(?:)*).
+Searches the text for the compiled pattern. Returns a :ref:`RegExMatch<class_regexmatch>` container of the first matching reult if found, otherwise null. The region to search within can be specified without modifying where the start and end anchor would be.
 
-.. _class_RegEx_get_capture:
+.. _class_RegEx_sub:
 
-- :ref:`String<class_string>`  **get_capture**  **(** :ref:`int<class_int>` capture  **)** const
+- :ref:`String<class_string>`  **sub**  **(** :ref:`String<class_string>` text, :ref:`String<class_string>` replacement, :ref:`bool<class_bool>` all=false, :ref:`int<class_int>` start=0, :ref:`int<class_int>` end=-1  **)** const
 
-Returns a captured group. A captured group is the part of a string that matches a part of the pattern delimited by parentheses (unless they are non-capturing parentheses *(?:)*).
-
-.. _class_RegEx_get_capture_start:
-
-- :ref:`int<class_int>`  **get_capture_start**  **(** :ref:`int<class_int>` capture  **)** const
-
-.. _class_RegEx_get_captures:
-
-- :ref:`StringArray<class_stringarray>`  **get_captures**  **(** **)** const
-
-Return a list of all the captures made by the regular expression.
+Searches the text for the compiled pattern and replaces it with the specified string. Escapes and backreferences such as ``\1`` and ``\g<name>`` expanded and resolved. By default only the first instance is replaced but it can be changed for all instances (global replacement). The region to search within can be specified without modifying where the start and end anchor would be.
 
 

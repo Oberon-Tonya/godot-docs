@@ -6,83 +6,71 @@
 InputEventKey
 =============
 
-**Category:** Built-In Types
+**Inherits:** :ref:`InputEventWithModifiers<class_inputeventwithmodifiers>` **<** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+
+**Category:** Core
 
 Brief Description
 -----------------
 
-
+Input event type for keyboard events.
 
 Member Functions
 ----------------
 
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_action<class_InputEventKey_is_action>`  **(** :ref:`String<class_string>` action  **)**                                          |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_action_pressed<class_InputEventKey_is_action_pressed>`  **(** :ref:`String<class_string>` is_action_pressed  **)**               |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_action_released<class_InputEventKey_is_action_released>`  **(** :ref:`String<class_string>` is_action_released  **)**            |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_echo<class_InputEventKey_is_echo>`  **(** **)**                                                                                  |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_pressed<class_InputEventKey_is_pressed>`  **(** **)**                                                                            |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_as_action<class_InputEventKey_set_as_action>`  **(** :ref:`String<class_string>` action, :ref:`bool<class_bool>` pressed  **)** |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_scancode<class_InputEventKey_get_scancode>`  **(** **)** const                               |
++------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_scancode_with_modifiers<class_InputEventKey_get_scancode_with_modifiers>`  **(** **)** const |
++------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_unicode<class_InputEventKey_get_unicode>`  **(** **)** const                                 |
++------------------------+--------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_echo<class_InputEventKey_set_echo>`  **(** :ref:`bool<class_bool>` echo  **)**               |
++------------------------+--------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_pressed<class_InputEventKey_set_pressed>`  **(** :ref:`bool<class_bool>` pressed  **)**      |
++------------------------+--------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_scancode<class_InputEventKey_set_scancode>`  **(** :ref:`int<class_int>` scancode  **)**     |
++------------------------+--------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_unicode<class_InputEventKey_set_unicode>`  **(** :ref:`int<class_int>` unicode  **)**        |
++------------------------+--------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **type**
-- :ref:`int<class_int>` **device**
-- :ref:`int<class_int>` **ID**
-- :ref:`bool<class_bool>` **shift**
-- :ref:`bool<class_bool>` **alt**
-- :ref:`bool<class_bool>` **control**
-- :ref:`bool<class_bool>` **meta**
-- :ref:`bool<class_bool>` **pressed**
-- :ref:`bool<class_bool>` **echo**
-- :ref:`int<class_int>` **scancode**
-- :ref:`int<class_int>` **unicode**
-
-Numeric Constants
------------------
-
-- **NONE** = **0**
-- **KEY** = **1**
-- **MOUSE_MOTION** = **2**
-- **MOUSE_BUTTON** = **3**
-- **JOYSTICK_MOTION** = **4**
-- **JOYSTICK_BUTTON** = **5**
-- **SCREEN_TOUCH** = **6**
-- **SCREEN_DRAG** = **7**
-- **ACTION** = **8**
+- :ref:`int<class_int>` **echo** - Echo state of the key, i.e. whether it's a repeat event or not.
+- :ref:`bool<class_bool>` **pressed** - Pressed state of the key.
+- :ref:`int<class_int>` **scancode** - Scancode of the key, one of the KEY_* constants in [@Global Scope].
+- :ref:`int<class_int>` **unicode** - Unicode identifier of the key (when relevant).
 
 Member Function Description
 ---------------------------
 
-.. _class_InputEventKey_is_action:
+.. _class_InputEventKey_get_scancode:
 
-- :ref:`bool<class_bool>`  **is_action**  **(** :ref:`String<class_string>` action  **)**
+- :ref:`int<class_int>`  **get_scancode**  **(** **)** const
 
-.. _class_InputEventKey_is_action_pressed:
+.. _class_InputEventKey_get_scancode_with_modifiers:
 
-- :ref:`bool<class_bool>`  **is_action_pressed**  **(** :ref:`String<class_string>` is_action_pressed  **)**
+- :ref:`int<class_int>`  **get_scancode_with_modifiers**  **(** **)** const
 
-.. _class_InputEventKey_is_action_released:
+.. _class_InputEventKey_get_unicode:
 
-- :ref:`bool<class_bool>`  **is_action_released**  **(** :ref:`String<class_string>` is_action_released  **)**
+- :ref:`int<class_int>`  **get_unicode**  **(** **)** const
 
-.. _class_InputEventKey_is_echo:
+.. _class_InputEventKey_set_echo:
 
-- :ref:`bool<class_bool>`  **is_echo**  **(** **)**
+- void  **set_echo**  **(** :ref:`bool<class_bool>` echo  **)**
 
-.. _class_InputEventKey_is_pressed:
+.. _class_InputEventKey_set_pressed:
 
-- :ref:`bool<class_bool>`  **is_pressed**  **(** **)**
+- void  **set_pressed**  **(** :ref:`bool<class_bool>` pressed  **)**
 
-.. _class_InputEventKey_set_as_action:
+.. _class_InputEventKey_set_scancode:
 
-- void  **set_as_action**  **(** :ref:`String<class_string>` action, :ref:`bool<class_bool>` pressed  **)**
+- void  **set_scancode**  **(** :ref:`int<class_int>` scancode  **)**
+
+.. _class_InputEventKey_set_unicode:
+
+- void  **set_unicode**  **(** :ref:`int<class_int>` unicode  **)**
 
 

@@ -13,28 +13,41 @@ GDFunctionState
 Brief Description
 -----------------
 
-
+State of a function call after yielding.
 
 Member Functions
 ----------------
 
-+--------------------------+------------------------------------------------------------------------+
-| Variant                  | :ref:`resume<class_GDFunctionState_resume>`  **(** var arg=NULL  **)** |
-+--------------------------+------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_valid<class_GDFunctionState_is_valid>`  **(** **)** const     |
-+--------------------------+------------------------------------------------------------------------+
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_valid<class_GDFunctionState_is_valid>`  **(** :ref:`bool<class_bool>` extended_check=false  **)** const |
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`  | :ref:`resume<class_GDFunctionState_resume>`  **(** :ref:`Variant<class_variant>` arg=NULL  **)**                 |
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Calling :ref:`@GDScript.yield<class_@GDScript_yield>` within a function will cause that function to yield and return its current state as an object of this type. The yielded function call can then be resumed later by calling :ref:`resume<class_GDFunctionState_resume>` on this state object.
 
 Member Function Description
 ---------------------------
 
-.. _class_GDFunctionState_resume:
-
-- Variant  **resume**  **(** var arg=NULL  **)**
-
 .. _class_GDFunctionState_is_valid:
 
-- :ref:`bool<class_bool>`  **is_valid**  **(** **)** const
+- :ref:`bool<class_bool>`  **is_valid**  **(** :ref:`bool<class_bool>` extended_check=false  **)** const
 
-Should put children to the top left corner instead of center of the container.
+Check whether the function call may be resumed. This is not the case if the function state was already resumed.
+
+If ``extended_check`` is enabled, it also checks if the associated script and object still exist. The extended check is done in debug mode as part of :ref:`GDFunctionState.resume<class_GDFunctionState_resume>`, but you can use this if you know you may be trying to resume without knowing for sure the object and/or script have survived up to that point.
+
+.. _class_GDFunctionState_resume:
+
+- :ref:`Variant<class_variant>`  **resume**  **(** :ref:`Variant<class_variant>` arg=NULL  **)**
+
+Resume execution of the yielded function call.
+
+If handed an argument, return the argument from the :ref:`@GDScript.yield<class_@GDScript_yield>` call in the yielded function call. You can pass e.g. an :ref:`Array<class_array>` to hand multiple arguments.
+
+This function returns what the resumed function call returns, possibly another function state if yielded again.
 
 

@@ -16,27 +16,25 @@ Dictionary type.
 Member Functions
 ----------------
 
-+------------------------------+-----------------------------------------------------------------------------------------------+
-| void                         | :ref:`clear<class_Dictionary_clear>`  **(** **)**                                             |
-+------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`empty<class_Dictionary_empty>`  **(** **)**                                             |
-+------------------------------+-----------------------------------------------------------------------------------------------+
-| void                         | :ref:`erase<class_Dictionary_erase>`  **(** var value  **)**                                  |
-+------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`has<class_Dictionary_has>`  **(** var value  **)**                                      |
-+------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`has_all<class_Dictionary_has_all>`  **(** :ref:`Array<class_array>` values  **)**       |
-+------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`hash<class_Dictionary_hash>`  **(** **)**                                               |
-+------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`    | :ref:`keys<class_Dictionary_keys>`  **(** **)**                                               |
-+------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`parse_json<class_Dictionary_parse_json>`  **(** :ref:`String<class_string>` json  **)** |
-+------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`size<class_Dictionary_size>`  **(** **)**                                               |
-+------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`to_json<class_Dictionary_to_json>`  **(** **)**                                         |
-+------------------------------+-----------------------------------------------------------------------------------------------+
++----------------------------+---------------------------------------------------------------------------------------+
+| void                       | :ref:`clear<class_Dictionary_clear>`  **(** **)**                                     |
++----------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`empty<class_Dictionary_empty>`  **(** **)**                                     |
++----------------------------+---------------------------------------------------------------------------------------+
+| void                       | :ref:`erase<class_Dictionary_erase>`  **(** var key  **)**                            |
++----------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`has<class_Dictionary_has>`  **(** var key  **)**                                |
++----------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`has_all<class_Dictionary_has_all>`  **(** :ref:`Array<class_array>` keys  **)** |
++----------------------------+---------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`hash<class_Dictionary_hash>`  **(** **)**                                       |
++----------------------------+---------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`keys<class_Dictionary_keys>`  **(** **)**                                       |
++----------------------------+---------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`size<class_Dictionary_size>`  **(** **)**                                       |
++----------------------------+---------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`values<class_Dictionary_values>`  **(** **)**                                   |
++----------------------------+---------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -60,19 +58,21 @@ Return true if the dictionary is empty.
 
 .. _class_Dictionary_erase:
 
-- void  **erase**  **(** var value  **)**
+- void  **erase**  **(** var key  **)**
 
 Erase a dictionary key/value pair by key.
 
 .. _class_Dictionary_has:
 
-- :ref:`bool<class_bool>`  **has**  **(** var value  **)**
+- :ref:`bool<class_bool>`  **has**  **(** var key  **)**
 
 Return true if the dictionary has a given key.
 
 .. _class_Dictionary_has_all:
 
-- :ref:`bool<class_bool>`  **has_all**  **(** :ref:`Array<class_array>` values  **)**
+- :ref:`bool<class_bool>`  **has_all**  **(** :ref:`Array<class_array>` keys  **)**
+
+Return true if the dictionary has all of the keys in the given array.
 
 .. _class_Dictionary_hash:
 
@@ -84,13 +84,7 @@ Return a hashed integer value representing the dictionary contents.
 
 - :ref:`Array<class_array>`  **keys**  **(** **)**
 
-Return the list of keys in the dictionary.
-
-.. _class_Dictionary_parse_json:
-
-- :ref:`int<class_int>`  **parse_json**  **(** :ref:`String<class_string>` json  **)**
-
-Parse json text to the dictionary. Return OK when successed or the error code when failed.
+Return the list of keys in the :ref:`Dictionary<class_dictionary>`.
 
 .. _class_Dictionary_size:
 
@@ -98,10 +92,10 @@ Parse json text to the dictionary. Return OK when successed or the error code wh
 
 Return the size of the dictionary (in pairs).
 
-.. _class_Dictionary_to_json:
+.. _class_Dictionary_values:
 
-- :ref:`String<class_string>`  **to_json**  **(** **)**
+- :ref:`Array<class_array>`  **values**  **(** **)**
 
-Return the dictionary as json text.
+Return the list of values in the :ref:`Dictionary<class_dictionary>`.
 
 

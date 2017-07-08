@@ -6,89 +6,71 @@
 InputEventMouseButton
 =====================
 
-**Category:** Built-In Types
+**Inherits:** :ref:`InputEventMouse<class_inputeventmouse>` **<** :ref:`InputEventWithModifiers<class_inputeventwithmodifiers>` **<** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+
+**Category:** Core
 
 Brief Description
 -----------------
 
-
+Input event type for mouse button events.
 
 Member Functions
 ----------------
 
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_action<class_InputEventMouseButton_is_action>`  **(** :ref:`String<class_string>` action  **)**                                          |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_action_pressed<class_InputEventMouseButton_is_action_pressed>`  **(** :ref:`String<class_string>` is_action_pressed  **)**               |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_action_released<class_InputEventMouseButton_is_action_released>`  **(** :ref:`String<class_string>` is_action_released  **)**            |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_echo<class_InputEventMouseButton_is_echo>`  **(** **)**                                                                                  |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_pressed<class_InputEventMouseButton_is_pressed>`  **(** **)**                                                                            |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_as_action<class_InputEventMouseButton_set_as_action>`  **(** :ref:`String<class_string>` action, :ref:`bool<class_bool>` pressed  **)** |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`get_button_index<class_InputEventMouseButton_get_button_index>`  **(** **)** const                               |
++----------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_factor<class_InputEventMouseButton_get_factor>`  **(** **)**                                                 |
++----------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_doubleclick<class_InputEventMouseButton_is_doubleclick>`  **(** **)** const                                   |
++----------------------------+------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_button_index<class_InputEventMouseButton_set_button_index>`  **(** :ref:`int<class_int>` button_index  **)** |
++----------------------------+------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_doubleclick<class_InputEventMouseButton_set_doubleclick>`  **(** :ref:`bool<class_bool>` doubleclick  **)**  |
++----------------------------+------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_factor<class_InputEventMouseButton_set_factor>`  **(** :ref:`float<class_float>` factor  **)**               |
++----------------------------+------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_pressed<class_InputEventMouseButton_set_pressed>`  **(** :ref:`bool<class_bool>` pressed  **)**              |
++----------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **type**
-- :ref:`int<class_int>` **device**
-- :ref:`int<class_int>` **ID**
-- :ref:`bool<class_bool>` **shift**
-- :ref:`bool<class_bool>` **alt**
-- :ref:`bool<class_bool>` **control**
-- :ref:`bool<class_bool>` **meta**
-- :ref:`int<class_int>` **button_mask**
-- :ref:`int<class_int>` **x**
-- :ref:`int<class_int>` **y**
-- :ref:`Vector2<class_vector2>` **pos**
-- :ref:`int<class_int>` **global_x**
-- :ref:`int<class_int>` **global_y**
-- :ref:`Vector2<class_vector2>` **global_pos**
-- :ref:`int<class_int>` **button_index**
-- :ref:`bool<class_bool>` **pressed**
-- :ref:`bool<class_bool>` **doubleclick**
-
-Numeric Constants
------------------
-
-- **NONE** = **0**
-- **KEY** = **1**
-- **MOUSE_MOTION** = **2**
-- **MOUSE_BUTTON** = **3**
-- **JOYSTICK_MOTION** = **4**
-- **JOYSTICK_BUTTON** = **5**
-- **SCREEN_TOUCH** = **6**
-- **SCREEN_DRAG** = **7**
-- **ACTION** = **8**
+- :ref:`int<class_int>` **button_index** - Mouse button identifier, one of the BUTTON_* or BUTTON_WHEEL_* constants in [@Global Scope].
+- :ref:`bool<class_bool>` **doubleclick** - Whether the event is a double-click.
+- :ref:`float<class_float>` **factor**
+- :ref:`bool<class_bool>` **pressed** - Pressed state of the mouse button.
 
 Member Function Description
 ---------------------------
 
-.. _class_InputEventMouseButton_is_action:
+.. _class_InputEventMouseButton_get_button_index:
 
-- :ref:`bool<class_bool>`  **is_action**  **(** :ref:`String<class_string>` action  **)**
+- :ref:`int<class_int>`  **get_button_index**  **(** **)** const
 
-.. _class_InputEventMouseButton_is_action_pressed:
+.. _class_InputEventMouseButton_get_factor:
 
-- :ref:`bool<class_bool>`  **is_action_pressed**  **(** :ref:`String<class_string>` is_action_pressed  **)**
+- :ref:`float<class_float>`  **get_factor**  **(** **)**
 
-.. _class_InputEventMouseButton_is_action_released:
+.. _class_InputEventMouseButton_is_doubleclick:
 
-- :ref:`bool<class_bool>`  **is_action_released**  **(** :ref:`String<class_string>` is_action_released  **)**
+- :ref:`bool<class_bool>`  **is_doubleclick**  **(** **)** const
 
-.. _class_InputEventMouseButton_is_echo:
+.. _class_InputEventMouseButton_set_button_index:
 
-- :ref:`bool<class_bool>`  **is_echo**  **(** **)**
+- void  **set_button_index**  **(** :ref:`int<class_int>` button_index  **)**
 
-.. _class_InputEventMouseButton_is_pressed:
+.. _class_InputEventMouseButton_set_doubleclick:
 
-- :ref:`bool<class_bool>`  **is_pressed**  **(** **)**
+- void  **set_doubleclick**  **(** :ref:`bool<class_bool>` doubleclick  **)**
 
-.. _class_InputEventMouseButton_set_as_action:
+.. _class_InputEventMouseButton_set_factor:
 
-- void  **set_as_action**  **(** :ref:`String<class_string>` action, :ref:`bool<class_bool>` pressed  **)**
+- void  **set_factor**  **(** :ref:`float<class_float>` factor  **)**
+
+.. _class_InputEventMouseButton_set_pressed:
+
+- void  **set_pressed**  **(** :ref:`bool<class_bool>` pressed  **)**
 
 

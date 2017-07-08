@@ -19,10 +19,36 @@ Member Functions
 ----------------
 
 +----------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_param<class_SliderJoint_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_param<class_SliderJoint_get_param>`  **(** :ref:`int<class_int>` param  **)** const                            |
 +----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_param<class_SliderJoint_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **angular_limit/damping**
+- :ref:`float<class_float>` **angular_limit/lower_angle**
+- :ref:`float<class_float>` **angular_limit/restitution**
+- :ref:`float<class_float>` **angular_limit/softness**
+- :ref:`float<class_float>` **angular_limit/upper_angle**
+- :ref:`float<class_float>` **angular_motion/damping**
+- :ref:`float<class_float>` **angular_motion/restitution**
+- :ref:`float<class_float>` **angular_motion/softness**
+- :ref:`float<class_float>` **angular_ortho/damping**
+- :ref:`float<class_float>` **angular_ortho/restitution**
+- :ref:`float<class_float>` **angular_ortho/softness**
+- :ref:`float<class_float>` **linear_limit/damping**
+- :ref:`float<class_float>` **linear_limit/lower_distance**
+- :ref:`float<class_float>` **linear_limit/restitution**
+- :ref:`float<class_float>` **linear_limit/softness**
+- :ref:`float<class_float>` **linear_limit/upper_distance**
+- :ref:`float<class_float>` **linear_motion/damping**
+- :ref:`float<class_float>` **linear_motion/restitution**
+- :ref:`float<class_float>` **linear_motion/softness**
+- :ref:`float<class_float>` **linear_ortho/damping**
+- :ref:`float<class_float>` **linear_ortho/restitution**
+- :ref:`float<class_float>` **linear_ortho/softness**
 
 Numeric Constants
 -----------------
@@ -54,12 +80,12 @@ Numeric Constants
 Member Function Description
 ---------------------------
 
-.. _class_SliderJoint_set_param:
-
-- void  **set_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
-
 .. _class_SliderJoint_get_param:
 
 - :ref:`float<class_float>`  **get_param**  **(** :ref:`int<class_int>` param  **)** const
+
+.. _class_SliderJoint_set_param:
+
+- void  **set_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
 
 

@@ -18,35 +18,50 @@ Kinematic body 2D node.
 Member Functions
 ----------------
 
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`move<class_KinematicBody2D_move>`  **(** :ref:`Vector2<class_vector2>` rel_vec  **)**                            |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`move_to<class_KinematicBody2D_move_to>`  **(** :ref:`Vector2<class_vector2>` position  **)**                     |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`test_move<class_KinematicBody2D_test_move>`  **(** :ref:`Vector2<class_vector2>` rel_vec  **)**                  |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_travel<class_KinematicBody2D_get_travel>`  **(** **)** const                                                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`revert_motion<class_KinematicBody2D_revert_motion>`  **(** **)**                                                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_colliding<class_KinematicBody2D_is_colliding>`  **(** **)** const                                             |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_collision_pos<class_KinematicBody2D_get_collision_pos>`  **(** **)** const                                   |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_collision_normal<class_KinematicBody2D_get_collision_normal>`  **(** **)** const                             |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_collider_velocity<class_KinematicBody2D_get_collider_velocity>`  **(** **)** const                           |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`    | :ref:`get_collider<class_KinematicBody2D_get_collider>`  **(** **)** const                                             |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_collider_shape<class_KinematicBody2D_get_collider_shape>`  **(** **)** const                                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| Variant                        | :ref:`get_collider_metadata<class_KinematicBody2D_get_collider_metadata>`  **(** **)** const                           |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_collision_margin<class_KinematicBody2D_set_collision_margin>`  **(** :ref:`float<class_float>` pixels  **)** |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_collision_margin<class_KinematicBody2D_get_collision_margin>`  **(** **)** const                             |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`  | :ref:`get_collider<class_KinematicBody2D_get_collider>`  **(** **)** const                                                                                                                                                                                                                                                      |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`  | :ref:`get_collider_metadata<class_KinematicBody2D_get_collider_metadata>`  **(** **)** const                                                                                                                                                                                                                                    |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_collider_shape<class_KinematicBody2D_get_collider_shape>`  **(** **)** const                                                                                                                                                                                                                                          |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_collider_velocity<class_KinematicBody2D_get_collider_velocity>`  **(** **)** const                                                                                                                                                                                                                                    |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_collision_margin<class_KinematicBody2D_get_collision_margin>`  **(** **)** const                                                                                                                                                                                                                                      |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_collision_normal<class_KinematicBody2D_get_collision_normal>`  **(** **)** const                                                                                                                                                                                                                                      |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_collision_pos<class_KinematicBody2D_get_collision_pos>`  **(** **)** const                                                                                                                                                                                                                                            |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`      | :ref:`get_move_and_slide_colliders<class_KinematicBody2D_get_move_and_slide_colliders>`  **(** **)** const                                                                                                                                                                                                                      |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_travel<class_KinematicBody2D_get_travel>`  **(** **)** const                                                                                                                                                                                                                                                          |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_colliding<class_KinematicBody2D_is_colliding>`  **(** **)** const                                                                                                                                                                                                                                                      |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_move_and_slide_on_ceiling<class_KinematicBody2D_is_move_and_slide_on_ceiling>`  **(** **)** const                                                                                                                                                                                                                      |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_move_and_slide_on_floor<class_KinematicBody2D_is_move_and_slide_on_floor>`  **(** **)** const                                                                                                                                                                                                                          |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_move_and_slide_on_wall<class_KinematicBody2D_is_move_and_slide_on_wall>`  **(** **)** const                                                                                                                                                                                                                            |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`move<class_KinematicBody2D_move>`  **(** :ref:`Vector2<class_vector2>` rel_vec  **)**                                                                                                                                                                                                                                     |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>`  **(** :ref:`Vector2<class_vector2>` linear_velocity, :ref:`Vector2<class_vector2>` floor_normal=Vector2(0, 0), :ref:`float<class_float>` slope_stop_min_velocity=5, :ref:`int<class_int>` max_bounces=4, :ref:`float<class_float>` floor_max_angle=0.785398  **)** |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`move_to<class_KinematicBody2D_move_to>`  **(** :ref:`Vector2<class_vector2>` position  **)**                                                                                                                                                                                                                              |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`revert_motion<class_KinematicBody2D_revert_motion>`  **(** **)**                                                                                                                                                                                                                                                          |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_collision_margin<class_KinematicBody2D_set_collision_margin>`  **(** :ref:`float<class_float>` pixels  **)**                                                                                                                                                                                                          |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`test_move<class_KinematicBody2D_test_move>`  **(** :ref:`Transform2D<class_transform2d>` from, :ref:`Vector2<class_vector2>` rel_vec  **)**                                                                                                                                                                               |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **collision/margin**
 
 Description
 -----------
@@ -60,65 +75,17 @@ Kinematic Characters: KinematicBody2D also has an api for moving objects (the :r
 Member Function Description
 ---------------------------
 
-.. _class_KinematicBody2D_move:
-
-- :ref:`Vector2<class_vector2>`  **move**  **(** :ref:`Vector2<class_vector2>` rel_vec  **)**
-
-Move the body in the given direction, stopping if there is an obstacle.
-
-.. _class_KinematicBody2D_move_to:
-
-- :ref:`Vector2<class_vector2>`  **move_to**  **(** :ref:`Vector2<class_vector2>` position  **)**
-
-Move the body to the given position. This is not a teleport, and the body will stop if there is an obstacle.
-
-.. _class_KinematicBody2D_test_move:
-
-- :ref:`bool<class_bool>`  **test_move**  **(** :ref:`Vector2<class_vector2>` rel_vec  **)**
-
-Return true if there would be a collision if the body moved in the given direction.
-
-.. _class_KinematicBody2D_get_travel:
-
-- :ref:`Vector2<class_vector2>`  **get_travel**  **(** **)** const
-
-Return the last movement done by the body.
-
-.. _class_KinematicBody2D_revert_motion:
-
-- void  **revert_motion**  **(** **)**
-
-Undo the last movement done by the body.
-
-.. _class_KinematicBody2D_is_colliding:
-
-- :ref:`bool<class_bool>`  **is_colliding**  **(** **)** const
-
-Return whether the body is colliding with another.
-
-.. _class_KinematicBody2D_get_collision_pos:
-
-- :ref:`Vector2<class_vector2>`  **get_collision_pos**  **(** **)** const
-
-Return the point in space where the body is touching another. If there is no collision, this method will return (0,0), so collisions must be checked first with :ref:`is_colliding<class_KinematicBody2D_is_colliding>`.
-
-.. _class_KinematicBody2D_get_collision_normal:
-
-- :ref:`Vector2<class_vector2>`  **get_collision_normal**  **(** **)** const
-
-Return the normal of the surface the body collided with. This is useful to implement sliding along a surface.
-
-.. _class_KinematicBody2D_get_collider_velocity:
-
-- :ref:`Vector2<class_vector2>`  **get_collider_velocity**  **(** **)** const
-
-Return the velocity of the body that collided with this one.
-
 .. _class_KinematicBody2D_get_collider:
 
-- :ref:`Object<class_object>`  **get_collider**  **(** **)** const
+- :ref:`Variant<class_variant>`  **get_collider**  **(** **)** const
 
 Return the body that collided with this one.
+
+.. _class_KinematicBody2D_get_collider_metadata:
+
+- :ref:`Variant<class_variant>`  **get_collider_metadata**  **(** **)** const
+
+Return the metadata of the shape that collided with this body. If there is no collision, it will return 0, so collisions must be checked first with :ref:`is_colliding<class_KinematicBody2D_is_colliding>`. Additionally, this metadata can not be set with :ref:`Object.set_meta<class_Object_set_meta>`, it must be set with :ref:`Physics2DServer.body_set_shape_metadata<class_Physics2DServer_body_set_shape_metadata>`.
 
 .. _class_KinematicBody2D_get_collider_shape:
 
@@ -126,11 +93,81 @@ Return the body that collided with this one.
 
 Return the shape index from the body that collided with this one. If there is no collision, this method will return 0, so collisions must be checked first with :ref:`is_colliding<class_KinematicBody2D_is_colliding>`.
 
-.. _class_KinematicBody2D_get_collider_metadata:
+.. _class_KinematicBody2D_get_collider_velocity:
 
-- Variant  **get_collider_metadata**  **(** **)** const
+- :ref:`Vector2<class_vector2>`  **get_collider_velocity**  **(** **)** const
 
-Return the metadata of the shape that collided with this body. If there is no collision, it will return 0, so collisions must be checked first with :ref:`is_colliding<class_KinematicBody2D_is_colliding>`. Additionally, this metadata can not be set with :ref:`Object.set_meta<class_Object_set_meta>`, it must be set with :ref:`Physics2DServer.body_set_shape_metadata<class_Physics2DServer_body_set_shape_metadata>`.
+Return the velocity of the body that collided with this one.
+
+.. _class_KinematicBody2D_get_collision_margin:
+
+- :ref:`float<class_float>`  **get_collision_margin**  **(** **)** const
+
+Return the collision margin for this object.
+
+.. _class_KinematicBody2D_get_collision_normal:
+
+- :ref:`Vector2<class_vector2>`  **get_collision_normal**  **(** **)** const
+
+Return the normal of the surface the body collided with. This is useful to implement sliding along a surface.
+
+.. _class_KinematicBody2D_get_collision_pos:
+
+- :ref:`Vector2<class_vector2>`  **get_collision_pos**  **(** **)** const
+
+Return the point in space where the body is touching another. If there is no collision, this method will return (0,0), so collisions must be checked first with :ref:`is_colliding<class_KinematicBody2D_is_colliding>`.
+
+.. _class_KinematicBody2D_get_move_and_slide_colliders:
+
+- :ref:`Array<class_array>`  **get_move_and_slide_colliders**  **(** **)** const
+
+.. _class_KinematicBody2D_get_travel:
+
+- :ref:`Vector2<class_vector2>`  **get_travel**  **(** **)** const
+
+Return the last movement done by the body.
+
+.. _class_KinematicBody2D_is_colliding:
+
+- :ref:`bool<class_bool>`  **is_colliding**  **(** **)** const
+
+Return whether the body is colliding with another.
+
+.. _class_KinematicBody2D_is_move_and_slide_on_ceiling:
+
+- :ref:`bool<class_bool>`  **is_move_and_slide_on_ceiling**  **(** **)** const
+
+.. _class_KinematicBody2D_is_move_and_slide_on_floor:
+
+- :ref:`bool<class_bool>`  **is_move_and_slide_on_floor**  **(** **)** const
+
+.. _class_KinematicBody2D_is_move_and_slide_on_wall:
+
+- :ref:`bool<class_bool>`  **is_move_and_slide_on_wall**  **(** **)** const
+
+.. _class_KinematicBody2D_move:
+
+- :ref:`Vector2<class_vector2>`  **move**  **(** :ref:`Vector2<class_vector2>` rel_vec  **)**
+
+Move the body in the given direction, stopping if there is an obstacle. The returned vector is how much movement was remaining before being stopped.
+
+.. _class_KinematicBody2D_move_and_slide:
+
+- :ref:`Vector2<class_vector2>`  **move_and_slide**  **(** :ref:`Vector2<class_vector2>` linear_velocity, :ref:`Vector2<class_vector2>` floor_normal=Vector2(0, 0), :ref:`float<class_float>` slope_stop_min_velocity=5, :ref:`int<class_int>` max_bounces=4, :ref:`float<class_float>` floor_max_angle=0.785398  **)**
+
+.. _class_KinematicBody2D_move_to:
+
+- :ref:`Vector2<class_vector2>`  **move_to**  **(** :ref:`Vector2<class_vector2>` position  **)**
+
+Move the body to the given position. This is not a teleport, and the body will stop if there is an obstacle. The returned vector is how much movement was remaining before being stopped.
+
+``floor_max_angle`` is in radians (default is pi/4), and filters which obstacles should be considered as floors/cellings instead of walls.
+
+.. _class_KinematicBody2D_revert_motion:
+
+- void  **revert_motion**  **(** **)**
+
+Undo the last movement done by the body.
 
 .. _class_KinematicBody2D_set_collision_margin:
 
@@ -138,10 +175,10 @@ Return the metadata of the shape that collided with this body. If there is no co
 
 Set the collision margin for this object. A collision margin is an amount (in pixels) that all shapes will grow when computing collisions, to account for numerical imprecision.
 
-.. _class_KinematicBody2D_get_collision_margin:
+.. _class_KinematicBody2D_test_move:
 
-- :ref:`float<class_float>`  **get_collision_margin**  **(** **)** const
+- :ref:`bool<class_bool>`  **test_move**  **(** :ref:`Transform2D<class_transform2d>` from, :ref:`Vector2<class_vector2>` rel_vec  **)**
 
-Return the collision margin for this object.
+Return true if there would be a collision if the body moved from the given point in the given direction.
 
 

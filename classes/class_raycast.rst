@@ -13,98 +13,187 @@ RayCast
 Brief Description
 -----------------
 
-
+Query the closest object intersecting a ray.
 
 Member Functions
 ----------------
 
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_enabled<class_RayCast_set_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**             |
+| void                           | :ref:`add_exception<class_RayCast_add_exception>`  **(** :ref:`Object<class_object>` node  **)**        |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_enabled<class_RayCast_is_enabled>`  **(** **)** const                                          |
+| void                           | :ref:`add_exception_rid<class_RayCast_add_exception_rid>`  **(** :ref:`RID<class_rid>` rid  **)**       |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_cast_to<class_RayCast_set_cast_to>`  **(** :ref:`Vector3<class_vector3>` local_point  **)**   |
+| void                           | :ref:`clear_exceptions<class_RayCast_clear_exceptions>`  **(** **)**                                    |
++--------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`force_raycast_update<class_RayCast_force_raycast_update>`  **(** **)**                            |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`  | :ref:`get_cast_to<class_RayCast_get_cast_to>`  **(** **)** const                                        |
-+--------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_colliding<class_RayCast_is_colliding>`  **(** **)** const                                      |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`    | :ref:`get_collider<class_RayCast_get_collider>`  **(** **)** const                                      |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_collider_shape<class_RayCast_get_collider_shape>`  **(** **)** const                          |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_collision_point<class_RayCast_get_collision_point>`  **(** **)** const                        |
+| :ref:`int<class_int>`          | :ref:`get_collision_layer<class_RayCast_get_collision_layer>`  **(** **)** const                        |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`  | :ref:`get_collision_normal<class_RayCast_get_collision_normal>`  **(** **)** const                      |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_exception_rid<class_RayCast_add_exception_rid>`  **(** :ref:`RID<class_rid>` rid  **)**       |
+| :ref:`Vector3<class_vector3>`  | :ref:`get_collision_point<class_RayCast_get_collision_point>`  **(** **)** const                        |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_exception<class_RayCast_add_exception>`  **(** :ref:`Object<class_object>` node  **)**        |
+| :ref:`int<class_int>`          | :ref:`get_type_mask<class_RayCast_get_type_mask>`  **(** **)** const                                    |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`remove_exception_rid<class_RayCast_remove_exception_rid>`  **(** :ref:`RID<class_rid>` rid  **)** |
+| :ref:`bool<class_bool>`        | :ref:`is_colliding<class_RayCast_is_colliding>`  **(** **)** const                                      |
++--------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_enabled<class_RayCast_is_enabled>`  **(** **)** const                                          |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`remove_exception<class_RayCast_remove_exception>`  **(** :ref:`Object<class_object>` node  **)**  |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`clear_exceptions<class_RayCast_clear_exceptions>`  **(** **)**                                    |
+| void                           | :ref:`remove_exception_rid<class_RayCast_remove_exception_rid>`  **(** :ref:`RID<class_rid>` rid  **)** |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_cast_to<class_RayCast_set_cast_to>`  **(** :ref:`Vector3<class_vector3>` local_point  **)**   |
++--------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_collision_layer<class_RayCast_set_collision_layer>`  **(** :ref:`int<class_int>` layer  **)** |
++--------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_enabled<class_RayCast_set_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**             |
++--------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_type_mask<class_RayCast_set_type_mask>`  **(** :ref:`int<class_int>` mask  **)**              |
++--------------------------------+---------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`Vector3<class_vector3>` **cast_to**
+- :ref:`int<class_int>` **collision_layer**
+- :ref:`bool<class_bool>` **enabled**
+- :ref:`int<class_int>` **type_mask**
+
+Description
+-----------
+
+A RayCast represents a line from its origin to its destination position ``cast_to``, it is used to query the 3D space in order to find the closest object intersecting with the ray.
+
+
+
+RayCast can ignore some objects by adding them to the exception list via ``add_exception``, setting proper filtering with layers, or by filtering object types with type masks.
+
+
+
+Only enabled raycasts will be able to query the space and report collisions!
+
+
+
+RayCast calculates intersection every fixed frame (see :ref:`Node<class_node>`), and the result is cached so it can be used later until the next frame. If multiple queries are required between fixed frames (or during the same frame) use :ref:`force_raycast_update<class_RayCast_force_raycast_update>` after adjusting the raycast.
 
 Member Function Description
 ---------------------------
-
-.. _class_RayCast_set_enabled:
-
-- void  **set_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
-
-.. _class_RayCast_is_enabled:
-
-- :ref:`bool<class_bool>`  **is_enabled**  **(** **)** const
-
-.. _class_RayCast_set_cast_to:
-
-- void  **set_cast_to**  **(** :ref:`Vector3<class_vector3>` local_point  **)**
-
-.. _class_RayCast_get_cast_to:
-
-- :ref:`Vector3<class_vector3>`  **get_cast_to**  **(** **)** const
-
-.. _class_RayCast_is_colliding:
-
-- :ref:`bool<class_bool>`  **is_colliding**  **(** **)** const
-
-.. _class_RayCast_get_collider:
-
-- :ref:`Object<class_object>`  **get_collider**  **(** **)** const
-
-.. _class_RayCast_get_collider_shape:
-
-- :ref:`int<class_int>`  **get_collider_shape**  **(** **)** const
-
-.. _class_RayCast_get_collision_point:
-
-- :ref:`Vector3<class_vector3>`  **get_collision_point**  **(** **)** const
-
-.. _class_RayCast_get_collision_normal:
-
-- :ref:`Vector3<class_vector3>`  **get_collision_normal**  **(** **)** const
-
-.. _class_RayCast_add_exception_rid:
-
-- void  **add_exception_rid**  **(** :ref:`RID<class_rid>` rid  **)**
 
 .. _class_RayCast_add_exception:
 
 - void  **add_exception**  **(** :ref:`Object<class_object>` node  **)**
 
-.. _class_RayCast_remove_exception_rid:
+Adds a collision exception so the ray does not report collisions with the specified ``node``.
 
-- void  **remove_exception_rid**  **(** :ref:`RID<class_rid>` rid  **)**
+.. _class_RayCast_add_exception_rid:
+
+- void  **add_exception_rid**  **(** :ref:`RID<class_rid>` rid  **)**
+
+.. _class_RayCast_clear_exceptions:
+
+- void  **clear_exceptions**  **(** **)**
+
+Removes all collision exception for this ray.
+
+.. _class_RayCast_force_raycast_update:
+
+- void  **force_raycast_update**  **(** **)**
+
+Updates the collision information in case if this object's properties changed during the current frame (for example position, rotation or the cast_point). Note, ``set_enabled`` is not required for this to work.
+
+.. _class_RayCast_get_cast_to:
+
+- :ref:`Vector3<class_vector3>`  **get_cast_to**  **(** **)** const
+
+Return the destination point of this ray object.
+
+.. _class_RayCast_get_collider:
+
+- :ref:`Object<class_object>`  **get_collider**  **(** **)** const
+
+Return the closest object the ray is pointing to. Note that this does not consider the length of the vector, so you must also use :ref:`is_colliding<class_RayCast_is_colliding>` to check if the object returned is actually colliding with the ray.
+
+.. _class_RayCast_get_collider_shape:
+
+- :ref:`int<class_int>`  **get_collider_shape**  **(** **)** const
+
+Returns the collision shape of the closest object the ray is pointing to.
+
+.. _class_RayCast_get_collision_layer:
+
+- :ref:`int<class_int>`  **get_collision_layer**  **(** **)** const
+
+Returns the collision layer for this ray.
+
+.. _class_RayCast_get_collision_normal:
+
+- :ref:`Vector3<class_vector3>`  **get_collision_normal**  **(** **)** const
+
+Returns the normal of the intersecting object shape face containing the collision point.
+
+.. _class_RayCast_get_collision_point:
+
+- :ref:`Vector3<class_vector3>`  **get_collision_point**  **(** **)** const
+
+Returns collision point. This point is in **global** coordinate system.
+
+.. _class_RayCast_get_type_mask:
+
+- :ref:`int<class_int>`  **get_type_mask**  **(** **)** const
+
+Returns the type mask (types of objects to detect) for this ray. The value is a sum (bitwise OR'd) of constants available for :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`.
+
+.. _class_RayCast_is_colliding:
+
+- :ref:`bool<class_bool>`  **is_colliding**  **(** **)** const
+
+Return whether the closest object the ray is pointing to is colliding with the vector (considering the vector length).
+
+.. _class_RayCast_is_enabled:
+
+- :ref:`bool<class_bool>`  **is_enabled**  **(** **)** const
+
+Returns whether this raycast is enabled or not.
 
 .. _class_RayCast_remove_exception:
 
 - void  **remove_exception**  **(** :ref:`Object<class_object>` node  **)**
 
-.. _class_RayCast_clear_exceptions:
+Removes a collision exception so the ray does report collisions with the specified ``node``.
 
-- void  **clear_exceptions**  **(** **)**
+.. _class_RayCast_remove_exception_rid:
+
+- void  **remove_exception_rid**  **(** :ref:`RID<class_rid>` rid  **)**
+
+.. _class_RayCast_set_cast_to:
+
+- void  **set_cast_to**  **(** :ref:`Vector3<class_vector3>` local_point  **)**
+
+Sets to which point ray should be casted. This point is in **local** coordinate system.
+
+.. _class_RayCast_set_collision_layer:
+
+- void  **set_collision_layer**  **(** :ref:`int<class_int>` layer  **)**
+
+Set the mask to filter objects. Only objects with at least the same mask element set will be detected.
+
+.. _class_RayCast_set_enabled:
+
+- void  **set_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+Enables the RayCast2D. Only enabled raycasts will be able to query the space and report collisions.
+
+.. _class_RayCast_set_type_mask:
+
+- void  **set_type_mask**  **(** :ref:`int<class_int>` mask  **)**
+
+Set the types of objects to detect. For ``mask`` use a logic sum (OR operation) of constants defined in :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`, eg. ``PhysicsDirectSpaceState.TYPE_MASK_STATIC_BODY | PhysicsDirectSpaceState.TYPE_MASK_KINEMATIC_BODY`` to detect only those two types.
 
 

@@ -18,45 +18,88 @@ Control that provides single line string editing.
 Member Functions
 ----------------
 
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_align<class_LineEdit_set_align>`  **(** :ref:`int<class_int>` align  **)**                         |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_align<class_LineEdit_get_align>`  **(** **)** const                                                |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`clear<class_LineEdit_clear>`  **(** **)**                                                              |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`select_all<class_LineEdit_select_all>`  **(** **)**                                                    |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_text<class_LineEdit_set_text>`  **(** :ref:`String<class_string>` text  **)**                      |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_text<class_LineEdit_get_text>`  **(** **)** const                                                  |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_cursor_pos<class_LineEdit_set_cursor_pos>`  **(** :ref:`int<class_int>` pos  **)**                 |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_cursor_pos<class_LineEdit_get_cursor_pos>`  **(** **)** const                                      |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_max_length<class_LineEdit_set_max_length>`  **(** :ref:`int<class_int>` chars  **)**               |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_max_length<class_LineEdit_get_max_length>`  **(** **)** const                                      |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`append_at_cursor<class_LineEdit_append_at_cursor>`  **(** :ref:`String<class_string>` text  **)**      |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_editable<class_LineEdit_set_editable>`  **(** :ref:`bool<class_bool>` enabled  **)**               |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_editable<class_LineEdit_is_editable>`  **(** **)** const                                            |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_secret<class_LineEdit_set_secret>`  **(** :ref:`bool<class_bool>` enabled  **)**                   |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_secret<class_LineEdit_is_secret>`  **(** **)** const                                                |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`select<class_LineEdit_select>`  **(** :ref:`int<class_int>` from=0, :ref:`int<class_int>` to=-1  **)** |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`append_at_cursor<class_LineEdit_append_at_cursor>`  **(** :ref:`String<class_string>` text  **)**                  |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`clear<class_LineEdit_clear>`  **(** **)**                                                                          |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`cursor_get_blink_enabled<class_LineEdit_cursor_get_blink_enabled>`  **(** **)** const                              |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`          | :ref:`cursor_get_blink_speed<class_LineEdit_cursor_get_blink_speed>`  **(** **)** const                                  |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`cursor_set_blink_enabled<class_LineEdit_cursor_set_blink_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**   |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`cursor_set_blink_speed<class_LineEdit_cursor_set_blink_speed>`  **(** :ref:`float<class_float>` blink_speed  **)** |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`              | :ref:`get_align<class_LineEdit_get_align>`  **(** **)** const                                                            |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`              | :ref:`get_cursor_pos<class_LineEdit_get_cursor_pos>`  **(** **)** const                                                  |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`get_expand_to_text_length<class_LineEdit_get_expand_to_text_length>`  **(** **)** const                            |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`              | :ref:`get_max_length<class_LineEdit_get_max_length>`  **(** **)** const                                                  |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PopupMenu<class_popupmenu>`  | :ref:`get_menu<class_LineEdit_get_menu>`  **(** **)** const                                                              |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`        | :ref:`get_placeholder<class_LineEdit_get_placeholder>`  **(** **)** const                                                |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`          | :ref:`get_placeholder_alpha<class_LineEdit_get_placeholder_alpha>`  **(** **)** const                                    |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`        | :ref:`get_text<class_LineEdit_get_text>`  **(** **)** const                                                              |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`is_editable<class_LineEdit_is_editable>`  **(** **)** const                                                        |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`is_secret<class_LineEdit_is_secret>`  **(** **)** const                                                            |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`menu_option<class_LineEdit_menu_option>`  **(** :ref:`int<class_int>` option  **)**                                |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`select<class_LineEdit_select>`  **(** :ref:`int<class_int>` from=0, :ref:`int<class_int>` to=-1  **)**             |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`select_all<class_LineEdit_select_all>`  **(** **)**                                                                |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_align<class_LineEdit_set_align>`  **(** :ref:`int<class_int>` align  **)**                                     |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_cursor_pos<class_LineEdit_set_cursor_pos>`  **(** :ref:`int<class_int>` pos  **)**                             |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_editable<class_LineEdit_set_editable>`  **(** :ref:`bool<class_bool>` enabled  **)**                           |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_expand_to_text_length<class_LineEdit_set_expand_to_text_length>`  **(** :ref:`bool<class_bool>` enabled  **)** |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_max_length<class_LineEdit_set_max_length>`  **(** :ref:`int<class_int>` chars  **)**                           |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_placeholder<class_LineEdit_set_placeholder>`  **(** :ref:`String<class_string>` text  **)**                    |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_placeholder_alpha<class_LineEdit_set_placeholder_alpha>`  **(** :ref:`float<class_float>` alpha  **)**         |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_secret<class_LineEdit_set_secret>`  **(** :ref:`bool<class_bool>` enabled  **)**                               |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_text<class_LineEdit_set_text>`  **(** :ref:`String<class_string>` text  **)**                                  |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
--  **text_entered**  **(** :ref:`String<class_string>` text  **)**
 -  **text_changed**  **(** :ref:`String<class_string>` text  **)**
+When the text changes, this signal is emitted.
+
+-  **text_entered**  **(** :ref:`String<class_string>` text  **)**
+This signal is emitted when the user presses KEY_ENTER on the :ref:`LineEdit<class_lineedit>`. This signal is often used as an alternate confirmation mechanism in dialogs.
+
+
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **align**
+- :ref:`bool<class_bool>` **caret_blink**
+- :ref:`float<class_float>` **caret_blink_speed**
+- :ref:`bool<class_bool>` **editable**
+- :ref:`bool<class_bool>` **expand_to_len**
+- :ref:`int<class_int>` **focus_mode**
+- :ref:`int<class_int>` **max_length**
+- :ref:`float<class_float>` **placeholder_alpha**
+- :ref:`String<class_string>` **placeholder_text**
+- :ref:`bool<class_bool>` **secret**
+- :ref:`String<class_string>` **text**
 
 Numeric Constants
 -----------------
@@ -65,6 +108,13 @@ Numeric Constants
 - **ALIGN_CENTER** = **1**
 - **ALIGN_RIGHT** = **2**
 - **ALIGN_FILL** = **3**
+- **MENU_CUT** = **0**
+- **MENU_COPY** = **1**
+- **MENU_PASTE** = **2**
+- **MENU_CLEAR** = **3**
+- **MENU_SELECT_ALL** = **4**
+- **MENU_UNDO** = **5**
+- **MENU_MAX** = **6**
 
 Description
 -----------
@@ -74,13 +124,11 @@ LineEdit provides a single line string editor, used for text fields.
 Member Function Description
 ---------------------------
 
-.. _class_LineEdit_set_align:
+.. _class_LineEdit_append_at_cursor:
 
-- void  **set_align**  **(** :ref:`int<class_int>` align  **)**
+- void  **append_at_cursor**  **(** :ref:`String<class_string>` text  **)**
 
-.. _class_LineEdit_get_align:
-
-- :ref:`int<class_int>`  **get_align**  **(** **)** const
+Append text at cursor, scrolling the :ref:`LineEdit<class_lineedit>` when needed.
 
 .. _class_LineEdit_clear:
 
@@ -88,29 +136,33 @@ Member Function Description
 
 Clear the :ref:`LineEdit<class_lineedit>` text.
 
-.. _class_LineEdit_select_all:
+.. _class_LineEdit_cursor_get_blink_enabled:
 
-- void  **select_all**  **(** **)**
+- :ref:`bool<class_bool>`  **cursor_get_blink_enabled**  **(** **)** const
 
-Select the whole string.
+Gets whether the line edit caret is blinking.
 
-.. _class_LineEdit_set_text:
+.. _class_LineEdit_cursor_get_blink_speed:
 
-- void  **set_text**  **(** :ref:`String<class_string>` text  **)**
+- :ref:`float<class_float>`  **cursor_get_blink_speed**  **(** **)** const
 
-Set the text in the :ref:`LineEdit<class_lineedit>`, clearing the existing one and the selection.
+Gets the line edit caret blink speed.
 
-.. _class_LineEdit_get_text:
+.. _class_LineEdit_cursor_set_blink_enabled:
 
-- :ref:`String<class_string>`  **get_text**  **(** **)** const
+- void  **cursor_set_blink_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
 
-Return the text in the :ref:`LineEdit<class_lineedit>`.
+Set the line edit caret to blink.
 
-.. _class_LineEdit_set_cursor_pos:
+.. _class_LineEdit_cursor_set_blink_speed:
 
-- void  **set_cursor_pos**  **(** :ref:`int<class_int>` pos  **)**
+- void  **cursor_set_blink_speed**  **(** :ref:`float<class_float>` blink_speed  **)**
 
-Set the cursor position inside the :ref:`LineEdit<class_lineedit>`, causing it to scroll if needed.
+Set the line edit caret blink speed. Cannot be less then or equal to 0.
+
+.. _class_LineEdit_get_align:
+
+- :ref:`int<class_int>`  **get_align**  **(** **)** const
 
 .. _class_LineEdit_get_cursor_pos:
 
@@ -118,11 +170,9 @@ Set the cursor position inside the :ref:`LineEdit<class_lineedit>`, causing it t
 
 Return the cursor position inside the :ref:`LineEdit<class_lineedit>`.
 
-.. _class_LineEdit_set_max_length:
+.. _class_LineEdit_get_expand_to_text_length:
 
-- void  **set_max_length**  **(** :ref:`int<class_int>` chars  **)**
-
-Set the maximum amount of characters the :ref:`LineEdit<class_lineedit>` can edit, and cropping existing text in case it exceeds that limit. Setting 0 removes the limit.
+- :ref:`bool<class_bool>`  **get_expand_to_text_length**  **(** **)** const
 
 .. _class_LineEdit_get_max_length:
 
@@ -130,17 +180,23 @@ Set the maximum amount of characters the :ref:`LineEdit<class_lineedit>` can edi
 
 Return the maximum amount of characters the :ref:`LineEdit<class_lineedit>` can edit. If 0 is returned, no limit exists.
 
-.. _class_LineEdit_append_at_cursor:
+.. _class_LineEdit_get_menu:
 
-- void  **append_at_cursor**  **(** :ref:`String<class_string>` text  **)**
+- :ref:`PopupMenu<class_popupmenu>`  **get_menu**  **(** **)** const
 
-Append text at cursor, scrolling the :ref:`LineEdit<class_lineedit>` when needed.
+.. _class_LineEdit_get_placeholder:
 
-.. _class_LineEdit_set_editable:
+- :ref:`String<class_string>`  **get_placeholder**  **(** **)** const
 
-- void  **set_editable**  **(** :ref:`bool<class_bool>` enabled  **)**
+.. _class_LineEdit_get_placeholder_alpha:
 
-Set the *editable* status of the :ref:`LineEdit<class_lineedit>`. When disabled, existing text can't be modified and new text can't be added.
+- :ref:`float<class_float>`  **get_placeholder_alpha**  **(** **)** const
+
+.. _class_LineEdit_get_text:
+
+- :ref:`String<class_string>`  **get_text**  **(** **)** const
+
+Return the text in the :ref:`LineEdit<class_lineedit>`.
 
 .. _class_LineEdit_is_editable:
 
@@ -148,20 +204,70 @@ Set the *editable* status of the :ref:`LineEdit<class_lineedit>`. When disabled,
 
 Return the *editable* status of the :ref:`LineEdit<class_lineedit>` (see :ref:`set_editable<class_LineEdit_set_editable>`).
 
-.. _class_LineEdit_set_secret:
-
-- void  **set_secret**  **(** :ref:`bool<class_bool>` enabled  **)**
-
-Set the *secret* status of the :ref:`LineEdit<class_lineedit>`. When enabled, every character is displayed as "\*".
-
 .. _class_LineEdit_is_secret:
 
 - :ref:`bool<class_bool>`  **is_secret**  **(** **)** const
 
 Return the *secret* status of the :ref:`LineEdit<class_lineedit>` (see :ref:`set_secret<class_LineEdit_set_secret>`).
 
+.. _class_LineEdit_menu_option:
+
+- void  **menu_option**  **(** :ref:`int<class_int>` option  **)**
+
 .. _class_LineEdit_select:
 
 - void  **select**  **(** :ref:`int<class_int>` from=0, :ref:`int<class_int>` to=-1  **)**
+
+.. _class_LineEdit_select_all:
+
+- void  **select_all**  **(** **)**
+
+Select the whole string.
+
+.. _class_LineEdit_set_align:
+
+- void  **set_align**  **(** :ref:`int<class_int>` align  **)**
+
+.. _class_LineEdit_set_cursor_pos:
+
+- void  **set_cursor_pos**  **(** :ref:`int<class_int>` pos  **)**
+
+Set the cursor position inside the :ref:`LineEdit<class_lineedit>`, causing it to scroll if needed.
+
+.. _class_LineEdit_set_editable:
+
+- void  **set_editable**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+Set the *editable* status of the :ref:`LineEdit<class_lineedit>`. When disabled, existing text can't be modified and new text can't be added.
+
+.. _class_LineEdit_set_expand_to_text_length:
+
+- void  **set_expand_to_text_length**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+.. _class_LineEdit_set_max_length:
+
+- void  **set_max_length**  **(** :ref:`int<class_int>` chars  **)**
+
+Set the maximum amount of characters the :ref:`LineEdit<class_lineedit>` can edit, and cropping existing text in case it exceeds that limit. Setting 0 removes the limit.
+
+.. _class_LineEdit_set_placeholder:
+
+- void  **set_placeholder**  **(** :ref:`String<class_string>` text  **)**
+
+.. _class_LineEdit_set_placeholder_alpha:
+
+- void  **set_placeholder_alpha**  **(** :ref:`float<class_float>` alpha  **)**
+
+.. _class_LineEdit_set_secret:
+
+- void  **set_secret**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+Set the *secret* status of the :ref:`LineEdit<class_lineedit>`. When enabled, every character is displayed as "\*".
+
+.. _class_LineEdit_set_text:
+
+- void  **set_text**  **(** :ref:`String<class_string>` text  **)**
+
+Set the text in the :ref:`LineEdit<class_lineedit>`, clearing the existing one and the selection.
 
 

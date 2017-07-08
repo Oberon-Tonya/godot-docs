@@ -16,146 +16,90 @@ Brief Description
 Member Functions
 ----------------
 
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`bool<class_bool>` from  **)**                 |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`int<class_int>` from  **)**                   |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`float<class_float>` from  **)**               |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`String<class_string>` from  **)**             |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Vector2<class_vector2>` from  **)**           |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Rect2<class_rect2>` from  **)**               |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Vector3<class_vector3>` from  **)**           |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Matrix32<class_matrix32>` from  **)**         |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Plane<class_plane>` from  **)**               |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Quat<class_quat>` from  **)**                 |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`AABB<class_aabb>` from  **)**                 |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Matrix3<class_matrix3>` from  **)**           |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Transform<class_transform>` from  **)**       |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Color<class_color>` from  **)**               |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Image<class_image>` from  **)**               |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`NodePath<class_nodepath>` from  **)**         |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`RID<class_rid>` from  **)**                   |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Object<class_object>` from  **)**             |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`InputEvent<class_inputevent>` from  **)**     |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Dictionary<class_dictionary>` from  **)**     |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Array<class_array>` from  **)**               |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`RawArray<class_rawarray>` from  **)**         |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`IntArray<class_intarray>` from  **)**         |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`RealArray<class_realarray>` from  **)**       |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`StringArray<class_stringarray>` from  **)**   |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Vector2Array<class_vector2array>` from  **)** |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Vector3Array<class_vector3array>` from  **)** |
-+-------+--------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`ColorArray<class_colorarray>` from  **)**     |
-+-------+--------------------------------------------------------------------------------------+
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`PoolColorArray<class_poolcolorarray>` from  **)**     |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`PoolVector3Array<class_poolvector3array>` from  **)** |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` from  **)** |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`PoolStringArray<class_poolstringarray>` from  **)**   |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`PoolRealArray<class_poolrealarray>` from  **)**       |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`PoolIntArray<class_poolintarray>` from  **)**         |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`PoolByteArray<class_poolbytearray>` from  **)**       |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Array<class_array>` from  **)**                       |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Dictionary<class_dictionary>` from  **)**             |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Object<class_object>` from  **)**                     |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`RID<class_rid>` from  **)**                           |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`NodePath<class_nodepath>` from  **)**                 |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Color<class_color>` from  **)**                       |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Transform<class_transform>` from  **)**               |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Basis<class_basis>` from  **)**                       |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Rect3<class_rect3>` from  **)**                       |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Quat<class_quat>` from  **)**                         |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Plane<class_plane>` from  **)**                       |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Transform2D<class_transform2d>` from  **)**           |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Vector3<class_vector3>` from  **)**                   |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Rect2<class_rect2>` from  **)**                       |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Vector2<class_vector2>` from  **)**                   |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`String<class_string>` from  **)**                     |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`float<class_float>` from  **)**                       |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`int<class_int>` from  **)**                           |
++-------+----------------------------------------------------------------------------------------------+
+| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`bool<class_bool>` from  **)**                         |
++-------+----------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
 .. _class_Nil_Nil:
 
-- void  **Nil**  **(** :ref:`bool<class_bool>` from  **)**
+- void  **Nil**  **(** :ref:`PoolColorArray<class_poolcolorarray>` from  **)**
 
 .. _class_Nil_Nil:
 
-- void  **Nil**  **(** :ref:`int<class_int>` from  **)**
+- void  **Nil**  **(** :ref:`PoolVector3Array<class_poolvector3array>` from  **)**
 
 .. _class_Nil_Nil:
 
-- void  **Nil**  **(** :ref:`float<class_float>` from  **)**
+- void  **Nil**  **(** :ref:`PoolVector2Array<class_poolvector2array>` from  **)**
 
 .. _class_Nil_Nil:
 
-- void  **Nil**  **(** :ref:`String<class_string>` from  **)**
+- void  **Nil**  **(** :ref:`PoolStringArray<class_poolstringarray>` from  **)**
 
 .. _class_Nil_Nil:
 
-- void  **Nil**  **(** :ref:`Vector2<class_vector2>` from  **)**
+- void  **Nil**  **(** :ref:`PoolRealArray<class_poolrealarray>` from  **)**
 
 .. _class_Nil_Nil:
 
-- void  **Nil**  **(** :ref:`Rect2<class_rect2>` from  **)**
+- void  **Nil**  **(** :ref:`PoolIntArray<class_poolintarray>` from  **)**
 
 .. _class_Nil_Nil:
 
-- void  **Nil**  **(** :ref:`Vector3<class_vector3>` from  **)**
-
-.. _class_Nil_Nil:
-
-- void  **Nil**  **(** :ref:`Matrix32<class_matrix32>` from  **)**
-
-.. _class_Nil_Nil:
-
-- void  **Nil**  **(** :ref:`Plane<class_plane>` from  **)**
-
-.. _class_Nil_Nil:
-
-- void  **Nil**  **(** :ref:`Quat<class_quat>` from  **)**
-
-.. _class_Nil_Nil:
-
-- void  **Nil**  **(** :ref:`AABB<class_aabb>` from  **)**
-
-.. _class_Nil_Nil:
-
-- void  **Nil**  **(** :ref:`Matrix3<class_matrix3>` from  **)**
-
-.. _class_Nil_Nil:
-
-- void  **Nil**  **(** :ref:`Transform<class_transform>` from  **)**
-
-.. _class_Nil_Nil:
-
-- void  **Nil**  **(** :ref:`Color<class_color>` from  **)**
-
-.. _class_Nil_Nil:
-
-- void  **Nil**  **(** :ref:`Image<class_image>` from  **)**
-
-.. _class_Nil_Nil:
-
-- void  **Nil**  **(** :ref:`NodePath<class_nodepath>` from  **)**
-
-.. _class_Nil_Nil:
-
-- void  **Nil**  **(** :ref:`RID<class_rid>` from  **)**
-
-.. _class_Nil_Nil:
-
-- void  **Nil**  **(** :ref:`Object<class_object>` from  **)**
-
-.. _class_Nil_Nil:
-
-- void  **Nil**  **(** :ref:`InputEvent<class_inputevent>` from  **)**
-
-.. _class_Nil_Nil:
-
-- void  **Nil**  **(** :ref:`Dictionary<class_dictionary>` from  **)**
+- void  **Nil**  **(** :ref:`PoolByteArray<class_poolbytearray>` from  **)**
 
 .. _class_Nil_Nil:
 
@@ -163,30 +107,74 @@ Member Function Description
 
 .. _class_Nil_Nil:
 
-- void  **Nil**  **(** :ref:`RawArray<class_rawarray>` from  **)**
+- void  **Nil**  **(** :ref:`Dictionary<class_dictionary>` from  **)**
 
 .. _class_Nil_Nil:
 
-- void  **Nil**  **(** :ref:`IntArray<class_intarray>` from  **)**
+- void  **Nil**  **(** :ref:`Object<class_object>` from  **)**
 
 .. _class_Nil_Nil:
 
-- void  **Nil**  **(** :ref:`RealArray<class_realarray>` from  **)**
+- void  **Nil**  **(** :ref:`RID<class_rid>` from  **)**
 
 .. _class_Nil_Nil:
 
-- void  **Nil**  **(** :ref:`StringArray<class_stringarray>` from  **)**
+- void  **Nil**  **(** :ref:`NodePath<class_nodepath>` from  **)**
 
 .. _class_Nil_Nil:
 
-- void  **Nil**  **(** :ref:`Vector2Array<class_vector2array>` from  **)**
+- void  **Nil**  **(** :ref:`Color<class_color>` from  **)**
 
 .. _class_Nil_Nil:
 
-- void  **Nil**  **(** :ref:`Vector3Array<class_vector3array>` from  **)**
+- void  **Nil**  **(** :ref:`Transform<class_transform>` from  **)**
 
 .. _class_Nil_Nil:
 
-- void  **Nil**  **(** :ref:`ColorArray<class_colorarray>` from  **)**
+- void  **Nil**  **(** :ref:`Basis<class_basis>` from  **)**
+
+.. _class_Nil_Nil:
+
+- void  **Nil**  **(** :ref:`Rect3<class_rect3>` from  **)**
+
+.. _class_Nil_Nil:
+
+- void  **Nil**  **(** :ref:`Quat<class_quat>` from  **)**
+
+.. _class_Nil_Nil:
+
+- void  **Nil**  **(** :ref:`Plane<class_plane>` from  **)**
+
+.. _class_Nil_Nil:
+
+- void  **Nil**  **(** :ref:`Transform2D<class_transform2d>` from  **)**
+
+.. _class_Nil_Nil:
+
+- void  **Nil**  **(** :ref:`Vector3<class_vector3>` from  **)**
+
+.. _class_Nil_Nil:
+
+- void  **Nil**  **(** :ref:`Rect2<class_rect2>` from  **)**
+
+.. _class_Nil_Nil:
+
+- void  **Nil**  **(** :ref:`Vector2<class_vector2>` from  **)**
+
+.. _class_Nil_Nil:
+
+- void  **Nil**  **(** :ref:`String<class_string>` from  **)**
+
+.. _class_Nil_Nil:
+
+- void  **Nil**  **(** :ref:`float<class_float>` from  **)**
+
+.. _class_Nil_Nil:
+
+- void  **Nil**  **(** :ref:`int<class_int>` from  **)**
+
+.. _class_Nil_Nil:
+
+- void  **Nil**  **(** :ref:`bool<class_bool>` from  **)**
 
 

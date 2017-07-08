@@ -8,7 +8,7 @@ VisualInstance
 
 **Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`BakedLightInstance<class_bakedlightinstance>`, :ref:`Light<class_light>`, :ref:`Room<class_room>`, :ref:`BakedLightSampler<class_bakedlightsampler>`, :ref:`Portal<class_portal>`, :ref:`GeometryInstance<class_geometryinstance>`
+**Inherited By:** :ref:`Light<class_light>`, :ref:`ReflectionProbe<class_reflectionprobe>`, :ref:`Room<class_room>`, :ref:`GIProbe<class_giprobe>`, :ref:`Portal<class_portal>`, :ref:`GeometryInstance<class_geometryinstance>`
 
 **Category:** Core
 
@@ -20,16 +20,37 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------+-----------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_base<class_VisualInstance_set_base>`  **(** :ref:`RID<class_rid>` base  **)**             |
-+------------------------+-----------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_layer_mask<class_VisualInstance_set_layer_mask>`  **(** :ref:`int<class_int>` mask  **)** |
-+------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_layer_mask<class_VisualInstance_get_layer_mask>`  **(** **)** const                       |
-+------------------------+-----------------------------------------------------------------------------------------------------+
++----------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`Rect3<class_rect3>`  | :ref:`get_aabb<class_VisualInstance_get_aabb>`  **(** **)** const                                   |
++----------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`get_layer_mask<class_VisualInstance_get_layer_mask>`  **(** **)** const                       |
++----------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`Rect3<class_rect3>`  | :ref:`get_transformed_aabb<class_VisualInstance_get_transformed_aabb>`  **(** **)** const           |
++----------------------------+-----------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_base<class_VisualInstance_set_base>`  **(** :ref:`RID<class_rid>` base  **)**             |
++----------------------------+-----------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_layer_mask<class_VisualInstance_set_layer_mask>`  **(** :ref:`int<class_int>` mask  **)** |
++----------------------------+-----------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **layers**
 
 Member Function Description
 ---------------------------
+
+.. _class_VisualInstance_get_aabb:
+
+- :ref:`Rect3<class_rect3>`  **get_aabb**  **(** **)** const
+
+.. _class_VisualInstance_get_layer_mask:
+
+- :ref:`int<class_int>`  **get_layer_mask**  **(** **)** const
+
+.. _class_VisualInstance_get_transformed_aabb:
+
+- :ref:`Rect3<class_rect3>`  **get_transformed_aabb**  **(** **)** const
 
 .. _class_VisualInstance_set_base:
 
@@ -38,9 +59,5 @@ Member Function Description
 .. _class_VisualInstance_set_layer_mask:
 
 - void  **set_layer_mask**  **(** :ref:`int<class_int>` mask  **)**
-
-.. _class_VisualInstance_get_layer_mask:
-
-- :ref:`int<class_int>`  **get_layer_mask**  **(** **)** const
 
 

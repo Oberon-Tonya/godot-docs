@@ -13,46 +13,57 @@ StreamPeerSSL
 Brief Description
 -----------------
 
-
+SSL Stream peer.
 
 Member Functions
 ----------------
 
-+------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                  | :ref:`accept<class_StreamPeerSSL_accept>`  **(** :ref:`StreamPeer<class_streampeer>` stream  **)**                                                                                              |
-+------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                  | :ref:`connect<class_StreamPeerSSL_connect>`  **(** :ref:`StreamPeer<class_streampeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_string>` for_hostname=""  **)** |
-+------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_status<class_StreamPeerSSL_get_status>`  **(** **)** const                                                                                                                            |
-+------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`disconnect<class_StreamPeerSSL_disconnect>`  **(** **)**                                                                                                                                  |
-+------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Error                  | :ref:`accept_stream<class_StreamPeerSSL_accept_stream>`  **(** :ref:`StreamPeer<class_streampeer>` stream  **)**                                                                                                    |
++------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Error                  | :ref:`connect_to_stream<class_StreamPeerSSL_connect_to_stream>`  **(** :ref:`StreamPeer<class_streampeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_string>` for_hostname=""  **)** |
++------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`disconnect_from_stream<class_StreamPeerSSL_disconnect_from_stream>`  **(** **)**                                                                                                                              |
++------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_status<class_StreamPeerSSL_get_status>`  **(** **)** const                                                                                                                                                |
++------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
 
-- **STATUS_DISCONNECTED** = **0**
-- **STATUS_CONNECTED** = **1**
-- **STATUS_ERROR_NO_CERTIFICATE** = **2**
-- **STATUS_ERROR_HOSTNAME_MISMATCH** = **3**
+- **STATUS_DISCONNECTED** = **0** --- A status representing a :ref:`StreamPeerSSL<class_streampeerssl>` that is disconnected.
+- **STATUS_CONNECTED** = **1** --- A status representing a :ref:`StreamPeerSSL<class_streampeerssl>` that is connected to a host.
+- **STATUS_ERROR_NO_CERTIFICATE** = **2** --- An errot status that shows the peer did not present a SSL certificate and validation was requested.
+- **STATUS_ERROR_HOSTNAME_MISMATCH** = **3** --- An error status that shows a mismatch in the SSL certificate domain presented by the host and the domain requested for validation.
+
+Description
+-----------
+
+SSL Stream peer. This object can be used to connect to SSL servers.
 
 Member Function Description
 ---------------------------
 
-.. _class_StreamPeerSSL_accept:
+.. _class_StreamPeerSSL_accept_stream:
 
-- Error  **accept**  **(** :ref:`StreamPeer<class_streampeer>` stream  **)**
+- Error  **accept_stream**  **(** :ref:`StreamPeer<class_streampeer>` stream  **)**
 
-.. _class_StreamPeerSSL_connect:
+.. _class_StreamPeerSSL_connect_to_stream:
 
-- Error  **connect**  **(** :ref:`StreamPeer<class_streampeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_string>` for_hostname=""  **)**
+- Error  **connect_to_stream**  **(** :ref:`StreamPeer<class_streampeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_string>` for_hostname=""  **)**
+
+Connect to a peer using an underlying :ref:`StreamPeer<class_streampeer>` "stream", when "validate_certs" is true, :ref:`StreamPeerSSL<class_streampeerssl>` will validate that the certificate presented by the peer matches the "for_hostname".
+
+.. _class_StreamPeerSSL_disconnect_from_stream:
+
+- void  **disconnect_from_stream**  **(** **)**
+
+Disconnect from host.
 
 .. _class_StreamPeerSSL_get_status:
 
 - :ref:`int<class_int>`  **get_status**  **(** **)** const
 
-.. _class_StreamPeerSSL_disconnect:
-
-- void  **disconnect**  **(** **)**
+Return the status of the connection, one of STATUS\_\* enum.
 
 

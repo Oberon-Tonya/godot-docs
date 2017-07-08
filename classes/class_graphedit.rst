@@ -21,33 +21,62 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Error                          | :ref:`connect_node<class_GraphEdit_connect_node>`  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)**           |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_node_connected<class_GraphEdit_is_node_connected>`  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)** |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`disconnect_node<class_GraphEdit_disconnect_node>`  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)**     |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`      | :ref:`get_connection_list<class_GraphEdit_get_connection_list>`  **(** **)** const                                                                                                                         |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`get_scroll_ofs<class_GraphEdit_get_scroll_ofs>`  **(** **)** const                                                                                                                                   |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_zoom<class_GraphEdit_set_zoom>`  **(** :ref:`float<class_float>` p_zoom  **)**                                                                                                                   |
+| :ref:`int<class_int>`          | :ref:`get_snap<class_GraphEdit_get_snap>`  **(** **)** const                                                                                                                                               |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_zoom<class_GraphEdit_get_zoom>`  **(** **)** const                                                                                                                                               |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_right_disconnects<class_GraphEdit_set_right_disconnects>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                           |
+| :ref:`bool<class_bool>`        | :ref:`is_node_connected<class_GraphEdit_is_node_connected>`  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)** |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_right_disconnects_enabled<class_GraphEdit_is_right_disconnects_enabled>`  **(** **)** const                                                                                                       |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_using_snap<class_GraphEdit_is_using_snap>`  **(** **)** const                                                                                                                                     |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_right_disconnects<class_GraphEdit_set_right_disconnects>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_scroll_ofs<class_GraphEdit_set_scroll_ofs>`  **(** :ref:`Vector2<class_vector2>` ofs  **)**                                                                                                      |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_selected<class_GraphEdit_set_selected>`  **(** :ref:`Object<class_object>` node  **)**                                                                                                           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_snap<class_GraphEdit_set_snap>`  **(** :ref:`int<class_int>` pixels  **)**                                                                                                                       |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_use_snap<class_GraphEdit_set_use_snap>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                             |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_zoom<class_GraphEdit_set_zoom>`  **(** :ref:`float<class_float>` p_zoom  **)**                                                                                                                   |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
--  **delete_nodes_request**  **(** **)**
--  **duplicate_nodes_request**  **(** **)**
--  **popup_request**  **(** :ref:`Vector2<class_vector2>` p_position  **)**
 -  **_begin_node_move**  **(** **)**
--  **disconnection_request**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_string>` to, :ref:`int<class_int>` to_slot  **)**
--  **connection_request**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_string>` to, :ref:`int<class_int>` to_slot  **)**
+Signal sent at the beginning of a GraphNode movement.
+
 -  **_end_node_move**  **(** **)**
+Signal sent at the end of a GraphNode movement.
+
+-  **connection_request**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_string>` to, :ref:`int<class_int>` to_slot  **)**
+Signal sent to the GraphEdit when the connection between 'from_slot' slot of 'from' GraphNode and 'to_slot' slot of 'to' GraphNode is attempted to be created.
+
+-  **connection_to_empty**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_slot, :ref:`Vector2<class_vector2>` release_pos  **)**
+-  **delete_nodes_request**  **(** **)**
+Signal sent when a GraphNode is attempted to be removed from the GraphEdit.
+
+-  **disconnection_request**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_string>` to, :ref:`int<class_int>` to_slot  **)**
+Signal sent to the GraphEdit when the connection between 'from_slot' slot of 'from' GraphNode and 'to_slot' slot of 'to' GraphNode is attempted to be removed.
+
+-  **duplicate_nodes_request**  **(** **)**
+Signal sent when a GraphNode is attempted to be duplicated in the GraphEdit.
+
+-  **node_selected**  **(** :ref:`Object<class_object>` node  **)**
+-  **popup_request**  **(** :ref:`Vector2<class_vector2>` p_position  **)**
+Signal sent when a popup is requested. Happens on right-clicking in the GraphEdit. 'p_position' is the position of the mouse pointer when the signal is sent.
+
+-  **scroll_offset_changed**  **(** :ref:`Vector2<class_vector2>` ofs  **)**
 
 Description
 -----------
@@ -64,12 +93,6 @@ Member Function Description
 - Error  **connect_node**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)**
 
 Create a connection between 'from_port' slot of 'from' GraphNode and 'to_port' slot of 'to' GraphNode. If the connection already exists, no connection is created.
-
-.. _class_GraphEdit_is_node_connected:
-
-- :ref:`bool<class_bool>`  **is_node_connected**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)**
-
-Return true if the 'from_port' slot of 'from' GraphNode is connected to the 'to_port' slot of 'to' GraphNode.
 
 .. _class_GraphEdit_disconnect_node:
 
@@ -89,11 +112,9 @@ Return an Array containing the list of connections. A connection consists in a s
 
 Return the scroll offset.
 
-.. _class_GraphEdit_set_zoom:
+.. _class_GraphEdit_get_snap:
 
-- void  **set_zoom**  **(** :ref:`float<class_float>` p_zoom  **)**
-
-Set the zoom value of the GraphEdit. Zoom value is between :ref:`0.01; 1.728<class_0.01; 1.728>`.
+- :ref:`int<class_int>`  **get_snap**  **(** **)** const
 
 .. _class_GraphEdit_get_zoom:
 
@@ -101,16 +122,48 @@ Set the zoom value of the GraphEdit. Zoom value is between :ref:`0.01; 1.728<cla
 
 Return the current zoom value.
 
-.. _class_GraphEdit_set_right_disconnects:
+.. _class_GraphEdit_is_node_connected:
 
-- void  **set_right_disconnects**  **(** :ref:`bool<class_bool>` enable  **)**
+- :ref:`bool<class_bool>`  **is_node_connected**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)**
 
-Enable the disconnection of existing connections in the visual GraphEdit by left-clicking a connection and releasing into the void.
+Return true if the 'from_port' slot of 'from' GraphNode is connected to the 'to_port' slot of 'to' GraphNode.
 
 .. _class_GraphEdit_is_right_disconnects_enabled:
 
 - :ref:`bool<class_bool>`  **is_right_disconnects_enabled**  **(** **)** const
 
 Return true is the disconnection of connections is enable in the visual GraphEdit. False otherwise.
+
+.. _class_GraphEdit_is_using_snap:
+
+- :ref:`bool<class_bool>`  **is_using_snap**  **(** **)** const
+
+.. _class_GraphEdit_set_right_disconnects:
+
+- void  **set_right_disconnects**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Enable the disconnection of existing connections in the visual GraphEdit by left-clicking a connection and releasing into the void.
+
+.. _class_GraphEdit_set_scroll_ofs:
+
+- void  **set_scroll_ofs**  **(** :ref:`Vector2<class_vector2>` ofs  **)**
+
+.. _class_GraphEdit_set_selected:
+
+- void  **set_selected**  **(** :ref:`Object<class_object>` node  **)**
+
+.. _class_GraphEdit_set_snap:
+
+- void  **set_snap**  **(** :ref:`int<class_int>` pixels  **)**
+
+.. _class_GraphEdit_set_use_snap:
+
+- void  **set_use_snap**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_GraphEdit_set_zoom:
+
+- void  **set_zoom**  **(** :ref:`float<class_float>` p_zoom  **)**
+
+Set the zoom value of the GraphEdit. Zoom value is between :ref:`0.01; 1.728<class_0.01; 1.728>`.
 
 

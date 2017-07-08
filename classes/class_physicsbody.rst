@@ -8,7 +8,7 @@ PhysicsBody
 
 **Inherits:** :ref:`CollisionObject<class_collisionobject>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`VehicleBody<class_vehiclebody>`, :ref:`KinematicBody<class_kinematicbody>`, :ref:`StaticBody<class_staticbody>`, :ref:`RigidBody<class_rigidbody>`
+**Inherited By:** :ref:`RigidBody<class_rigidbody>`, :ref:`VehicleBody<class_vehiclebody>`, :ref:`StaticBody<class_staticbody>`, :ref:`KinematicBody<class_kinematicbody>`
 
 **Category:** Core
 
@@ -20,15 +20,33 @@ Base class for different types of Physics bodies.
 Member Functions
 ----------------
 
-+------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_layer_mask<class_PhysicsBody_set_layer_mask>`  **(** :ref:`int<class_int>` mask  **)**                                                   |
-+------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_layer_mask<class_PhysicsBody_get_layer_mask>`  **(** **)** const                                                                         |
-+------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`add_collision_exception_with<class_PhysicsBody_add_collision_exception_with>`  **(** :ref:`PhysicsBody<class_physicsbody>` body  **)**       |
-+------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`remove_collision_exception_with<class_PhysicsBody_remove_collision_exception_with>`  **(** :ref:`PhysicsBody<class_physicsbody>` body  **)** |
-+------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`add_collision_exception_with<class_PhysicsBody_add_collision_exception_with>`  **(** :ref:`PhysicsBody<class_physicsbody>` body  **)**       |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`    | :ref:`get_collision_layer<class_PhysicsBody_get_collision_layer>`  **(** **)** const                                                               |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`get_collision_layer_bit<class_PhysicsBody_get_collision_layer_bit>`  **(** :ref:`int<class_int>` bit  **)** const                            |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`    | :ref:`get_collision_mask<class_PhysicsBody_get_collision_mask>`  **(** **)** const                                                                 |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`get_collision_mask_bit<class_PhysicsBody_get_collision_mask_bit>`  **(** :ref:`int<class_int>` bit  **)** const                              |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`remove_collision_exception_with<class_PhysicsBody_remove_collision_exception_with>`  **(** :ref:`PhysicsBody<class_physicsbody>` body  **)** |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_collision_layer<class_PhysicsBody_set_collision_layer>`  **(** :ref:`int<class_int>` layer  **)**                                        |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_collision_layer_bit<class_PhysicsBody_set_collision_layer_bit>`  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**   |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_collision_mask<class_PhysicsBody_set_collision_mask>`  **(** :ref:`int<class_int>` mask  **)**                                           |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_collision_mask_bit<class_PhysicsBody_set_collision_mask_bit>`  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**     |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **collision_layer**
+- :ref:`int<class_int>` **collision_mask**
 
 Description
 -----------
@@ -38,20 +56,44 @@ PhysicsBody is an abstract base class for implementing a physics body. All Physi
 Member Function Description
 ---------------------------
 
-.. _class_PhysicsBody_set_layer_mask:
-
-- void  **set_layer_mask**  **(** :ref:`int<class_int>` mask  **)**
-
-.. _class_PhysicsBody_get_layer_mask:
-
-- :ref:`int<class_int>`  **get_layer_mask**  **(** **)** const
-
 .. _class_PhysicsBody_add_collision_exception_with:
 
 - void  **add_collision_exception_with**  **(** :ref:`PhysicsBody<class_physicsbody>` body  **)**
 
+.. _class_PhysicsBody_get_collision_layer:
+
+- :ref:`int<class_int>`  **get_collision_layer**  **(** **)** const
+
+.. _class_PhysicsBody_get_collision_layer_bit:
+
+- :ref:`bool<class_bool>`  **get_collision_layer_bit**  **(** :ref:`int<class_int>` bit  **)** const
+
+.. _class_PhysicsBody_get_collision_mask:
+
+- :ref:`int<class_int>`  **get_collision_mask**  **(** **)** const
+
+.. _class_PhysicsBody_get_collision_mask_bit:
+
+- :ref:`bool<class_bool>`  **get_collision_mask_bit**  **(** :ref:`int<class_int>` bit  **)** const
+
 .. _class_PhysicsBody_remove_collision_exception_with:
 
 - void  **remove_collision_exception_with**  **(** :ref:`PhysicsBody<class_physicsbody>` body  **)**
+
+.. _class_PhysicsBody_set_collision_layer:
+
+- void  **set_collision_layer**  **(** :ref:`int<class_int>` layer  **)**
+
+.. _class_PhysicsBody_set_collision_layer_bit:
+
+- void  **set_collision_layer_bit**  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**
+
+.. _class_PhysicsBody_set_collision_mask:
+
+- void  **set_collision_mask**  **(** :ref:`int<class_int>` mask  **)**
+
+.. _class_PhysicsBody_set_collision_mask_bit:
+
+- void  **set_collision_mask_bit**  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**
 
 
